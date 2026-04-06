@@ -116,6 +116,96 @@
       margin-top: 0.5rem;
     }
     a.btn:hover { background-color: #2563eb; }
+    .coming-soon {
+      margin-top: 3rem;
+      max-width: 560px;
+      width: 100%;
+      text-align: left;
+    }
+    .coming-soon-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .coming-soon-label span {
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      animation: blink 1.8s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .coming-soon h2 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 0.375rem;
+      color: var(--text-muted);
+    }
+    .teaser-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+    @media (min-width: 540px) {
+      .teaser-cards { grid-template-columns: 1fr 1fr; }
+    }
+    .teaser-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      position: relative;
+      overflow: hidden;
+      opacity: 0.85;
+    }
+    .teaser-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+    }
+    .teaser-badge {
+      font-size: 0.625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.25);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 0.75rem;
+    }
+    .teaser-card h3 {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      margin-bottom: 0.375rem;
+      color: var(--text-primary);
+    }
+    .teaser-card p {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+      max-width: none;
+    }
+    .teaser-arrow {
+      display: inline-block;
+      margin-top: 0.75rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
     .footer-note {
       margin-top: 2rem;
       font-size: 0.8125rem;
@@ -151,6 +241,27 @@
   </div>
 
   <a href="index.html" class="btn">← Back to site</a>
+
+  <div class="coming-soon">
+    <div class="coming-soon-label"><span></span> What's coming next from ProfitSlab</div>
+    <div class="teaser-cards">
+
+      <div class="teaser-card">
+        <div class="teaser-badge">Coming Soon</div>
+        <h3>AI Audit in a Box</h3>
+        <p>A guided self-audit to map exactly where AI can save you the most time — and where you're leaving money on the table. Takes 30 minutes. Gives you a clear action list.</p>
+        <span class="teaser-arrow">The prompts you just bought are the toolkit. This shows you where to aim them. →</span>
+      </div>
+
+      <div class="teaser-card">
+        <div class="teaser-badge">Coming Soon</div>
+        <h3>The One-Person Marketing Department</h3>
+        <p>A full AI-powered marketing system built for solo operators and small teams. Content, email, ads, and social — on autopilot, without hiring anyone.</p>
+        <span class="teaser-arrow">The natural next step after the audit surfaces your gaps. →</span>
+      </div>
+
+    </div>
+  </div>
 
   <p class="footer-note">
     Didn't get the email? Check spam or <a href="mailto:hello@profitslab.io">contact us</a>.
