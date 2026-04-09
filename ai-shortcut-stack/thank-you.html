@@ -212,6 +212,56 @@
       color: var(--text-muted);
     }
     .footer-note a { color: var(--accent); text-decoration: none; }
+    .bonuses {
+      margin-top: 1.5rem;
+      max-width: 480px;
+      width: 100%;
+      text-align: left;
+    }
+    .bonuses-label {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+    }
+    .bonus-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.875rem 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .bonus-info { display: flex; align-items: center; gap: 0.75rem; }
+    .bonus-icon {
+      width: 36px;
+      height: 36px;
+      background: rgba(59,130,246,0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .bonus-icon svg { width: 18px; height: 18px; color: var(--accent); }
+    .bonus-name { font-size: 0.875rem; font-weight: 600; color: var(--text-primary); }
+    .bonus-tag { font-size: 0.6875rem; color: var(--text-muted); margin-top: 0.125rem; }
+    .bonus-dl {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .bonus-dl svg { width: 14px; height: 14px; }
   </style>
   <!-- Meta Pixel -->
   <script>
@@ -256,6 +306,42 @@
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
     Download the PDF
   </a>
+
+  <div class="bonuses">
+    <div class="bonuses-label">Your free bonuses</div>
+
+    <div class="bonus-item">
+      <div class="bonus-info">
+        <div class="bonus-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+        </div>
+        <div>
+          <div class="bonus-name">Prompt Chain Workflows</div>
+          <div class="bonus-tag">PDF — Chain prompts together for complex tasks</div>
+        </div>
+      </div>
+      <a href="Prompt_Chain_Workflows.pdf" download class="bonus-dl">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        Download
+      </a>
+    </div>
+
+    <div class="bonus-item">
+      <div class="bonus-info">
+        <div class="bonus-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+        </div>
+        <div>
+          <div class="bonus-name">Quick Start Cheat Sheet</div>
+          <div class="bonus-tag">PDF — Get better AI output from day one</div>
+        </div>
+      </div>
+      <a href="Quick_Start_Cheat_Sheet.pdf" download class="bonus-dl">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        Download
+      </a>
+    </div>
+  </div>
 
   <a href="../index.html" class="btn" style="background: transparent; border: 1px solid var(--border); color: var(--text-secondary);">← Back to site</a>
 
