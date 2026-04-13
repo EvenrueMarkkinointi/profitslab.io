@@ -1,11 +1,13 @@
 {
-  "buildCommand": null,
-  "outputDirectory": ".",
-  "installCommand": null,
   "redirects": [
     {
       "source": "/thank-you.html",
-      "destination": "/ai-shortcut-stack/thank-you.html",
+      "destination": "/ai-shortcut-stack/thank-you",
+      "permanent": true
+    },
+    {
+      "source": "/ai-shortcut-stack/thank-you.html",
+      "destination": "/ai-shortcut-stack/thank-you",
       "permanent": true
     }
   ]

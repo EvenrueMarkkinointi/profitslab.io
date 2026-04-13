@@ -1,0 +1,157 @@
+import { notFound, redirect } from "next/navigation";
+import { createServiceClient } from "@/lib/supabase";
+import type { Tier, Opportunity, CategoryScore } from "@/lib/questions";
+
+export default async function ReportPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const { id } = await params;
+  const supabase = createServiceClient();
+
+  const { data: assessment } = await supabase
+    .from("assessments")
+    .select("paid, email")
+    .eq("id", id)
+    .single();
+
+  if (!assessment) notFound();
+  if (!assessment.paid) redirect(`/audit/${id}/results`);
+
+  const { data: result } = await supabase
+    .from("assessment_results")
+    .select("*")
+    .eq("assessment_id", id)
+    .single();
+
+  if (!result) notFound();
+
+  const tierClass =
+    result.tier === "Scale Mode"
+      ? "tier-scale"
+      : result.tier === "Growth Ready"
+      ? "tier-growth"
+      : "tier-quick";
+
+  return (
+    <>
+      <nav className="audit-nav">
+        <div className="audit-nav-inner">
+          <a href="/audit" className="nav-logo" style={{ color: "var(--text-primary)", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem", fontWeight: 700, fontSize: "0.875rem" }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}>
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+            AI Audit in a Box
+          </a>
+        </div>
+      </nav>
+
+      <div className="audit-container" style={{ maxWidth: 720 }}>
+        {/* Header */}
+        <div style={{ textAlign: "center", marginBottom: "3rem" }}>
+          <div className={`tier-badge ${tierClass}`} style={{ marginBottom: "1rem" }}>
+            {result.tier as Tier}
+          </div>
+          <h1 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", fontWeight: 800, marginBottom: "0.75rem" }}>
+            Your Full AI Opportunity Report
+          </h1>
+          <p style={{ color: "var(--text-secondary)" }}>
+            Overall AI Readiness Score: <strong style={{ color: "var(--text-primary)" }}>{result.total_score}/100</strong>
+          </p>
+        </div>
+
+        {/* Category breakdown */}
+        <div className="report-section">
+          <h3>Category Breakdown</h3>
+          {(result.category_scores as CategoryScore[]).map((cat) => (
+            <div key={cat.name} className="category-row">
+              <span className="category-label">{cat.name}</span>
+              <div className="category-bar-outer">
+                <div
+                  className="category-bar-inner"
+                  style={{
+                    width: `${cat.normalized}%`,
+                    background: cat.normalized < 40 ? "#fbbf24" : cat.normalized < 70 ? "var(--accent)" : "#22c55e",
+                  }}
+                />
+              </div>
+              <span className="category-score">{cat.normalized}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* All opportunities */}
+        <div className="report-section">
+          <h3>Your Ranked Opportunities</h3>
+          <p style={{ fontSize: "0.9375rem", color: "var(--text-secondary)", marginBottom: "1.5rem" }}>
+            Sorted by your lowest-scoring areas. Start at the top.
+          </p>
+          {(result.top_opportunities as Opportunity[]).map((opp, i) => (
+            <div key={opp.title} className="opp-card">
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem" }}>
+                <div>
+                  <div className="opp-title">
+                    #{i + 1} {opp.title}
+                  </div>
+                  <div className="opp-meta" style={{ marginTop: "0.25rem" }}>
+                    {opp.category} · Saves ~{opp.estimatedHours}h/mo
+                  </div>
+                </div>
+                <span style={{
+                  fontSize: "0.6875rem", fontWeight: 700, textTransform: "uppercase",
+                  padding: "0.25rem 0.625rem", borderRadius: 4,
+                  background: opp.difficulty === "easy" ? "rgba(34,197,94,0.12)" : opp.difficulty === "medium" ? "rgba(59,130,246,0.12)" : "rgba(251,191,36,0.12)",
+                  color: opp.difficulty === "easy" ? "#22c55e" : opp.difficulty === "medium" ? "#3b82f6" : "#fbbf24",
+                  flexShrink: 0,
+                }}>
+                  {opp.difficulty}
+                </span>
+              </div>
+              <p style={{ fontSize: "0.9375rem", color: "var(--text-secondary)", marginTop: "0.75rem", lineHeight: 1.6 }}>
+                {opp.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Next steps */}
+        <div className="report-section" style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 14, padding: "1.75rem" }}>
+          <h3 style={{ marginBottom: "1rem" }}>Your 3-Step Action Plan</h3>
+          {[
+            { step: 1, text: "Start with the top &quot;easy&quot; opportunity above. Set aside 2 hours this week." },
+            { step: 2, text: "Use the AI Shortcut Stack prompts to execute. The relevant categories are already mapped to your gaps." },
+            { step: 3, text: "Once the first win is running, pick the next opportunity. Build one system at a time." },
+          ].map((item) => (
+            <div key={item.step} style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
+              <div style={{
+                width: 28, height: 28, background: "var(--accent)", borderRadius: "50%",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                fontWeight: 700, fontSize: "0.75rem", flexShrink: 0, marginTop: 2,
+              }}>
+                {item.step}
+              </div>
+              <p style={{ fontSize: "0.9375rem", color: "var(--text-secondary)", lineHeight: 1.6 }}
+                dangerouslySetInnerHTML={{ __html: item.text }}
+              />
+            </div>
+          ))}
+        </div>
+
+        <div style={{ textAlign: "center", marginTop: "2rem", paddingBottom: "2rem" }}>
+          <p style={{ fontSize: "0.875rem", color: "var(--text-muted)", marginBottom: "1rem" }}>
+            Questions? Email us at <a href="mailto:hello@profitslab.io" style={{ color: "var(--accent)" }}>hello@profitslab.io</a>
+          </p>
+          <a
+            href="/"
+            style={{ color: "var(--text-secondary)", fontSize: "0.875rem", textDecoration: "none" }}
+          >
+            ← Back to ProfitSlab
+          </a>
+        </div>
+      </div>
+    </>
+  );
+}
