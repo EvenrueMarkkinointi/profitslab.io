@@ -1,4 +1,5 @@
 import { notFound, redirect } from "next/navigation";
+import Link from "next/link";
 import { createServiceClient } from "@/lib/supabase";
 import type { Tier, Opportunity, CategoryScore } from "@/lib/questions";
 
@@ -38,14 +39,14 @@ export default async function ReportPage({
     <>
       <nav className="audit-nav">
         <div className="audit-nav-inner">
-          <a href="/audit" className="nav-logo" style={{ color: "var(--text-primary)", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem", fontWeight: 700, fontSize: "0.875rem" }}>
+          <Link href="/audit" className="nav-logo" style={{ color: "var(--text-primary)", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem", fontWeight: 700, fontSize: "0.875rem" }}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}>
               <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
               <polyline points="2 17 12 22 22 17"></polyline>
               <polyline points="2 12 12 17 22 12"></polyline>
             </svg>
             AI Audit in a Box
-          </a>
+          </Link>
         </div>
       </nav>
 
@@ -144,12 +145,12 @@ export default async function ReportPage({
           <p style={{ fontSize: "0.875rem", color: "var(--text-muted)", marginBottom: "1rem" }}>
             Questions? Email us at <a href="mailto:hello@profitslab.io" style={{ color: "var(--accent)" }}>hello@profitslab.io</a>
           </p>
-          <a
+          <Link
             href="/"
             style={{ color: "var(--text-secondary)", fontSize: "0.875rem", textDecoration: "none" }}
           >
             ← Back to ProfitSlab
-          </a>
+          </Link>
         </div>
       </div>
     </>

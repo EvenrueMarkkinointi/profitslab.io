@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Thank You — AI Shortcut Stack",
@@ -119,7 +120,7 @@ export default function ThankYou() {
         </div>
       </div>
 
-      <a
+      <Link
         href="/"
         style={{
           display: "inline-flex", alignItems: "center", gap: "0.5rem",
@@ -130,7 +131,7 @@ export default function ThankYou() {
         }}
       >
         ← Back to site
-      </a>
+      </Link>
 
       <div className="coming-soon">
         <div className="coming-soon-label">

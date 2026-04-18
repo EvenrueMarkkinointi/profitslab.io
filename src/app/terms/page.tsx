@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Service — ProfitSlab",
@@ -10,13 +11,13 @@ export default function Terms() {
     <>
       <nav className="nav">
         <div className="nav-content">
-          <a href="/" className="nav-logo">
+          <Link href="/" className="nav-logo">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: "var(--accent)" }}>
               <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
             </svg>
             ProfitSlab
-          </a>
-          <a href="/" className="nav-back">← Back to site</a>
+          </Link>
+          <Link href="/" className="nav-back">← Back to site</Link>
         </div>
       </nav>
 
@@ -120,7 +121,7 @@ export default function Terms() {
       </main>
 
       <footer className="footer">
-        <p className="footer-copyright">© 2026 ProfitSlab. All rights reserved. <a href="/" style={{ color: "var(--accent)", textDecoration: "none" }}>Back to site</a></p>
+        <p className="footer-copyright">© 2026 ProfitSlab. All rights reserved. <Link href="/" style={{ color: "var(--accent)", textDecoration: "none" }}>Back to site</Link></p>
       </footer>
     </>
   );

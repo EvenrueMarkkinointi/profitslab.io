@@ -113,7 +113,7 @@ export default function Home() {
             <div className="value-card core">
               <div className="value-tag core">Core Product</div>
               <h3>The AI Shortcut Stack</h3>
-              <p>80 copy-paste prompts across 10 business categories. Every prompt includes bracketed placeholders, a "when to use" note, and which AI model works best. PDF + Notion template.</p>
+              <p>80 copy-paste prompts across 10 business categories. Every prompt includes bracketed placeholders, a &quot;when to use&quot; note, and which AI model works best. PDF + Notion template.</p>
               <div className="value-price">Value: <span>$79</span></div>
             </div>
             <div className="value-card">
@@ -139,7 +139,7 @@ export default function Home() {
       {/* Categories */}
       <section className="section">
         <div className="section-header">
-          <h2>One prompt away from "done." Pick a category.</h2>
+          <h2>One prompt away from &quot;done.&quot; Pick a category.</h2>
           <p>Every prompt tells you when to use it, which AI works best, and exactly what to customize. No guessing.</p>
         </div>
         <div className="categories">
