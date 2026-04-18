@@ -36,13 +36,13 @@ export default function QuestionPage({
       if (stepNum < TOTAL_QUESTIONS) {
         router.push(`/audit/${id}/q/${stepNum + 1}`);
       } else {
-        // Last question — trigger scoring and go to results
+        // Last question — trigger scoring and go straight to the report
         await fetch("/api/audit/score", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ id }),
         });
-        router.push(`/audit/${id}/results`);
+        router.push(`/audit/${id}/report`);
       }
     } catch {
       setLoading(false);
@@ -89,7 +89,7 @@ export default function QuestionPage({
               {loading
                 ? "Saving…"
                 : stepNum === TOTAL_QUESTIONS
-                ? "See My Results →"
+                ? "Get My Report →"
                 : "Next →"}
             </button>
           </div>

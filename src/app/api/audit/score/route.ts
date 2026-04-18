@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
 
     const { data: assessment, error: fetchErr } = await supabase
       .from("assessments")
-      .select("responses")
+      .select("responses, email")
       .eq("id", id)
       .single();
 
@@ -40,6 +40,21 @@ export async function POST(req: NextRequest) {
       .from("assessments")
       .update({ completed_at: new Date().toISOString() })
       .eq("id", id);
+
+    // Trigger GHL email with the report link (lead magnet delivery)
+    if (assessment.email && process.env.GHL_WEBHOOK_URL) {
+      const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://profitslab.io";
+      fetch(process.env.GHL_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: assessment.email,
+          report_url: `${baseUrl}/audit/${id}/report`,
+          total_score: totalScore,
+          tier,
+        }),
+      }).catch((err) => console.error("GHL webhook error:", err));
+    }
 
     return NextResponse.json({ totalScore, tier });
   } catch (err) {

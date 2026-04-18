@@ -1,7 +1,9 @@
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import Link from "next/link";
 import { createServiceClient } from "@/lib/supabase";
 import type { Tier, Opportunity, CategoryScore } from "@/lib/questions";
+
+const STRIPE_URL = "https://buy.stripe.com/eVqdRa99xaaKdXgbUh6kg01";
 
 export default async function ReportPage({
   params,
@@ -13,12 +15,11 @@ export default async function ReportPage({
 
   const { data: assessment } = await supabase
     .from("assessments")
-    .select("paid, email")
+    .select("email")
     .eq("id", id)
     .single();
 
   if (!assessment) notFound();
-  if (!assessment.paid) redirect(`/audit/${id}/results`);
 
   const { data: result } = await supabase
     .from("assessment_results")
@@ -61,6 +62,9 @@ export default async function ReportPage({
           </h1>
           <p style={{ color: "var(--text-secondary)" }}>
             Overall AI Readiness Score: <strong style={{ color: "var(--text-primary)" }}>{result.total_score}/100</strong>
+          </p>
+          <p style={{ color: "var(--text-muted)", fontSize: "0.875rem", marginTop: "0.5rem" }}>
+            A copy has been sent to <strong style={{ color: "var(--text-secondary)" }}>{assessment.email}</strong>
           </p>
         </div>
 
@@ -122,7 +126,7 @@ export default async function ReportPage({
         <div className="report-section" style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 14, padding: "1.75rem" }}>
           <h3 style={{ marginBottom: "1rem" }}>Your 3-Step Action Plan</h3>
           {[
-            { step: 1, text: "Start with the top &quot;easy&quot; opportunity above. Set aside 2 hours this week." },
+            { step: 1, text: "Start with the top \u201Ceasy\u201D opportunity above. Set aside 2 hours this week." },
             { step: 2, text: "Use the AI Shortcut Stack prompts to execute. The relevant categories are already mapped to your gaps." },
             { step: 3, text: "Once the first win is running, pick the next opportunity. Build one system at a time." },
           ].map((item) => (
@@ -134,11 +138,60 @@ export default async function ReportPage({
               }}>
                 {item.step}
               </div>
-              <p style={{ fontSize: "0.9375rem", color: "var(--text-secondary)", lineHeight: 1.6 }}
-                dangerouslySetInnerHTML={{ __html: item.text }}
-              />
+              <p style={{ fontSize: "0.9375rem", color: "var(--text-secondary)", lineHeight: 1.6 }}>
+                {item.text}
+              </p>
             </div>
           ))}
+        </div>
+
+        {/* Upsell — AI Shortcut Stack */}
+        <div
+          className="report-section"
+          style={{
+            background: "linear-gradient(135deg, rgba(59,130,246,0.12), rgba(59,130,246,0.04))",
+            border: "1px solid rgba(59,130,246,0.35)",
+            borderRadius: 14,
+            padding: "2rem",
+            marginTop: "2rem",
+          }}
+        >
+          <div style={{
+            display: "inline-flex", alignItems: "center", gap: "0.5rem",
+            background: "rgba(59,130,246,0.2)",
+            padding: "0.25rem 0.75rem", borderRadius: 9999,
+            fontSize: "0.6875rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em",
+            color: "var(--accent)", marginBottom: "1rem",
+          }}>
+            Recommended for you
+          </div>
+          <h3 style={{ fontSize: "1.375rem", marginBottom: "0.75rem" }}>
+            Execute your action plan with the AI Shortcut Stack
+          </h3>
+          <p style={{ color: "var(--text-secondary)", fontSize: "0.9375rem", lineHeight: 1.6, marginBottom: "1.25rem" }}>
+            80 battle-tested AI prompts across 10 business categories — the exact prompts that match the opportunities in your report. Plus a Notion template, quick-start guide, and two free bonuses.
+          </p>
+          <ul style={{ listStyle: "none", padding: 0, margin: "0 0 1.5rem 0", fontSize: "0.9375rem", color: "var(--text-secondary)" }}>
+            <li style={{ marginBottom: "0.5rem" }}>✓ 80 prompts organized by business category</li>
+            <li style={{ marginBottom: "0.5rem" }}>✓ Notion template for your workspace</li>
+            <li style={{ marginBottom: "0.5rem" }}>✓ Prompt chain workflows (bonus)</li>
+            <li style={{ marginBottom: "0.5rem" }}>✓ Quick-start cheat sheet (bonus)</li>
+            <li>✓ 14-day money-back guarantee</li>
+          </ul>
+          <a
+            href={STRIPE_URL}
+            style={{
+              display: "inline-flex", alignItems: "center", gap: "0.5rem",
+              background: "var(--accent)", color: "white",
+              padding: "0.9375rem 2rem", borderRadius: 10,
+              fontWeight: 700, fontSize: "1rem", textDecoration: "none",
+            }}
+          >
+            Get the AI Shortcut Stack →
+          </a>
+          <p style={{ marginTop: "0.75rem", fontSize: "0.8125rem", color: "var(--text-muted)" }}>
+            One-time payment · Instant download
+          </p>
         </div>
 
         <div style={{ textAlign: "center", marginTop: "2rem", paddingBottom: "2rem" }}>

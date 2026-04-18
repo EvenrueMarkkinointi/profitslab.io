@@ -58,7 +58,7 @@ export default function AuditLanding() {
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </Link>
-          <span style={{ fontSize: "0.8125rem", color: "var(--text-muted)" }}>Free to start · Full report unlocked after</span>
+          <span style={{ fontSize: "0.8125rem", color: "var(--text-muted)" }}>100% free · No credit card · Report emailed to you</span>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1rem", maxWidth: 720, width: "100%", textAlign: "left" }}>
