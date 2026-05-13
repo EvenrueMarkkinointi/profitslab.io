@@ -165,32 +165,38 @@ export default async function ReportPage({
           }}>
             Recommended for you
           </div>
-          <h3 style={{ fontSize: "1.375rem", marginBottom: "0.75rem" }}>
+          <h3 style={{ fontSize: "1.375rem", marginBottom: "0.5rem" }}>
             Execute your action plan with the AI Shortcut Stack
           </h3>
           <p style={{ color: "var(--text-secondary)", fontSize: "0.9375rem", lineHeight: 1.6, marginBottom: "1.25rem" }}>
-            80 battle-tested AI prompts across 10 business categories — the exact prompts that match the opportunities in your report. Plus a Notion template, quick-start guide, and two free bonuses.
+            80 copy-paste AI prompts across 10 business categories — organized by the exact gaps your audit revealed. No setup, no technical skills. Open the PDF, copy the prompt, paste into ChatGPT.
           </p>
           <ul style={{ listStyle: "none", padding: 0, margin: "0 0 1.5rem 0", fontSize: "0.9375rem", color: "var(--text-secondary)" }}>
-            <li style={{ marginBottom: "0.5rem" }}>✓ 80 prompts organized by business category</li>
-            <li style={{ marginBottom: "0.5rem" }}>✓ Notion template for your workspace</li>
-            <li style={{ marginBottom: "0.5rem" }}>✓ Prompt chain workflows (bonus)</li>
-            <li style={{ marginBottom: "0.5rem" }}>✓ Quick-start cheat sheet (bonus)</li>
-            <li>✓ 14-day money-back guarantee</li>
+            <li style={{ marginBottom: "0.5rem" }}>✓ <strong style={{ color: "var(--text-primary)" }}>80-page PDF guide</strong> — 80 prompts organized by job: marketing, sales, ops, content, customer service and more</li>
+            <li style={{ marginBottom: "0.5rem" }}>✓ <strong style={{ color: "var(--text-primary)" }}>Notion template</strong> — duplicate to your workspace, organize prompts by team</li>
+            <li style={{ marginBottom: "0.5rem" }}>✓ <strong style={{ color: "var(--text-primary)" }}>Prompt Chain Workflows</strong> (bonus PDF) — multi-step AI workflows for complex tasks</li>
+            <li style={{ marginBottom: "0.5rem" }}>✓ <strong style={{ color: "var(--text-primary)" }}>Quick-Start Cheat Sheet</strong> (bonus PDF) — 1-page reference for the 10 highest-impact prompts</li>
+            <li>✓ Works with ChatGPT (free &amp; Plus), Claude, Gemini — no API key needed</li>
           </ul>
-          <a
-            href={STRIPE_URL}
-            style={{
-              display: "inline-flex", alignItems: "center", gap: "0.5rem",
-              background: "var(--accent)", color: "white",
-              padding: "0.9375rem 2rem", borderRadius: 10,
-              fontWeight: 700, fontSize: "1rem", textDecoration: "none",
-            }}
-          >
-            Get the AI Shortcut Stack →
-          </a>
-          <p style={{ marginTop: "0.75rem", fontSize: "0.8125rem", color: "var(--text-muted)" }}>
-            One-time payment · Instant download
+          <div style={{ display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap", marginBottom: "0.75rem" }}>
+            <a
+              href={STRIPE_URL}
+              style={{
+                display: "inline-flex", alignItems: "center", gap: "0.5rem",
+                background: "var(--accent)", color: "white",
+                padding: "0.9375rem 2rem", borderRadius: 10,
+                fontWeight: 700, fontSize: "1rem", textDecoration: "none",
+              }}
+            >
+              Get the AI Shortcut Stack — $19 →
+            </a>
+            <div style={{ fontSize: "0.875rem", color: "var(--text-muted)" }}>
+              <span style={{ textDecoration: "line-through", marginRight: "0.375rem" }}>$49</span>
+              <span style={{ color: "#22c55e", fontWeight: 600 }}>Launch price</span>
+            </div>
+          </div>
+          <p style={{ fontSize: "0.8125rem", color: "var(--text-muted)" }}>
+            One-time payment · Instant download · 14-day money-back guarantee
           </p>
         </div>
 
