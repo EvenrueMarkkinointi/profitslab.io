@@ -28,6 +28,10 @@ const faqs = [
     a: "Yes — up to 5 people per purchase. For larger teams, email hello@profitslab.io and we'll set up a team license.",
   },
   {
+    q: "How is this different from the free AI Audit?",
+    a: "The AI Audit tells you where AI can help your business most — it maps your gaps and ranks your opportunities. The Shortcut Stack gives you the actual prompts to act on those opportunities. They work best together: use the audit to find where to start, then use the stack to get it done.",
+  },
+  {
     q: "What if I don't like it?",
     a: "Email hello@profitslab.io within 14 days for a full refund. No forms, no friction, no questions asked.",
   },
@@ -62,16 +66,19 @@ export default function Home() {
               Stop guessing what to ask AI.
             </h1>
             <p className="hero-subtitle">
-              Get 80 ready-to-use prompts for real business tasks — sales emails, customer replies, SOPs, ad copy, hiring, content planning and everyday operations.
+              Use 80 ready-to-use prompts to write emails, replies, SOPs, ads and plans faster — without starting from a blank prompt every time.
             </p>
             <div className="hero-cta">
-              <a href={STRIPE_URL} className="btn-primary btn-large">
-                Get the Shortcut Stack — $19
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12"></line>
-                  <polyline points="12 5 19 12 12 19"></polyline>
-                </svg>
-              </a>
+              <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                <a href={STRIPE_URL} className="btn-primary btn-large">
+                  Get Instant Access
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+                <span style={{ fontSize: "0.8125rem", color: "var(--text-muted)", textAlign: "center" }}>$19 one-time payment · Instant download · 14-day guarantee</span>
+              </div>
               <Link href={AUDIT_URL} style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "var(--text-secondary)", fontSize: "0.9375rem", textDecoration: "none", fontWeight: 500 }}>
                 Take the Free AI Audit First →
               </Link>
@@ -103,6 +110,29 @@ export default function Home() {
           <p style={{ maxWidth: 620, margin: "1rem auto 0", color: "var(--text-secondary)" }}>
             The AI Shortcut Stack gives you proven starting points for the business tasks you already do every week.
           </p>
+        </div>
+      </section>
+
+      {/* Before / After */}
+      <section className="section">
+        <div className="section-header">
+          <h2>See the difference one good prompt makes</h2>
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", maxWidth: 800, margin: "0 auto" }}>
+          <div style={{ background: "rgba(239,68,68,0.06)", border: "1px solid rgba(239,68,68,0.2)", borderRadius: 12, padding: "1.5rem" }}>
+            <div style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#ef4444", marginBottom: "0.75rem" }}>Weak prompt</div>
+            <div style={{ fontFamily: "monospace", fontSize: "0.9375rem", color: "var(--text-secondary)", lineHeight: 1.6, fontStyle: "italic" }}>
+              &ldquo;Write me a sales email.&rdquo;
+            </div>
+            <div style={{ marginTop: "1rem", fontSize: "0.8125rem", color: "var(--text-muted)" }}>Result: generic, off-brand, needs full rewrite.</div>
+          </div>
+          <div style={{ background: "rgba(34,197,94,0.06)", border: "1px solid rgba(34,197,94,0.2)", borderRadius: 12, padding: "1.5rem" }}>
+            <div style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#22c55e", marginBottom: "0.75rem" }}>Shortcut Stack prompt</div>
+            <div style={{ fontFamily: "monospace", fontSize: "0.875rem", color: "var(--text-secondary)", lineHeight: 1.6 }}>
+              Write a cold email to <span className="placeholder">[prospect name]</span> at <span className="placeholder">[company]</span>. They are <span className="placeholder">[job title]</span> and their main challenge is <span className="placeholder">[pain point]</span>. Our solution <span className="placeholder">[how you solve it]</span>. Under 120 words. End with a soft question, not a meeting request.
+            </div>
+            <div style={{ marginTop: "1rem", fontSize: "0.8125rem", color: "var(--text-muted)" }}>Result: personalized, on-brief, ready to send.</div>
+          </div>
         </div>
       </section>
 
@@ -241,8 +271,11 @@ export default function Home() {
           <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", marginBottom: "1rem" }}>
             Not sure where AI would help your business most?
           </h2>
-          <p style={{ color: "var(--text-secondary)", lineHeight: 1.7, marginBottom: "1.75rem", maxWidth: 520, margin: "0 auto 1.75rem" }}>
+          <p style={{ color: "var(--text-secondary)", lineHeight: 1.7, marginBottom: "1.75rem", maxWidth: 520, margin: "0 auto 1rem" }}>
             Take the free AI Audit first. Answer 20 questions and get a personalized report showing your biggest AI opportunities, ranked by effort and impact.
+          </p>
+          <p style={{ color: "var(--text-secondary)", lineHeight: 1.7, maxWidth: 520, margin: "0 auto 1.75rem", fontWeight: 500 }}>
+            The audit shows where to start. The Shortcut Stack gives you the prompts to take action.
           </p>
           <Link
             href={AUDIT_URL}
@@ -363,7 +396,7 @@ export default function Home() {
             <a href="/terms">Terms</a>
           </div>
         </div>
-        <p className="footer-copyright">© 2026 ProfitSlab. All rights reserved.</p>
+        <p className="footer-copyright">© 2026 ProfitSlab. All rights reserved. · Powered by <a href="https://www.evenrue.fi/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-muted)", textDecoration: "none" }}>Evenrue</a></p>
       </footer>
     </>
   );
