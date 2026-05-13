@@ -165,19 +165,45 @@ export default async function ReportPage({
           }}>
             Recommended for you
           </div>
-          <h3 style={{ fontSize: "1.375rem", marginBottom: "0.5rem" }}>
+          <h3 style={{ fontSize: "1.375rem", marginBottom: "0.25rem" }}>
             Execute your action plan with the AI Shortcut Stack
           </h3>
-          <p style={{ color: "var(--text-secondary)", fontSize: "0.9375rem", lineHeight: 1.6, marginBottom: "1.25rem" }}>
-            80 copy-paste AI prompts across 10 business categories — organized by the exact gaps your audit revealed. No setup, no technical skills. Open the PDF, copy the prompt, paste into ChatGPT.
+          <p style={{ color: "var(--text-muted)", fontSize: "0.875rem", marginBottom: "1.5rem" }}>
+            Three resources. One price. Instant download.
           </p>
-          <ul style={{ listStyle: "none", padding: 0, margin: "0 0 1.5rem 0", fontSize: "0.9375rem", color: "var(--text-secondary)" }}>
-            <li style={{ marginBottom: "0.5rem" }}>✓ <strong style={{ color: "var(--text-primary)" }}>80-page PDF guide</strong> — 80 prompts organized by job: marketing, sales, ops, content, customer service and more</li>
-            <li style={{ marginBottom: "0.5rem" }}>✓ <strong style={{ color: "var(--text-primary)" }}>Notion template</strong> — duplicate to your workspace, organize prompts by team</li>
-            <li style={{ marginBottom: "0.5rem" }}>✓ <strong style={{ color: "var(--text-primary)" }}>Prompt Chain Workflows</strong> (bonus PDF) — multi-step AI workflows for complex tasks</li>
-            <li style={{ marginBottom: "0.5rem" }}>✓ <strong style={{ color: "var(--text-primary)" }}>Quick-Start Cheat Sheet</strong> (bonus PDF) — 1-page reference for the 10 highest-impact prompts</li>
-            <li>✓ Works with ChatGPT (free &amp; Plus), Claude, Gemini — no API key needed</li>
-          </ul>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginBottom: "1.5rem" }}>
+            {/* Core product */}
+            <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid var(--border)", borderRadius: 10, padding: "1rem 1.25rem", display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem" }}>
+              <div>
+                <div style={{ fontSize: "0.6875rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--accent)", marginBottom: "0.25rem" }}>Core Product</div>
+                <div style={{ fontWeight: 700, color: "var(--text-primary)", marginBottom: "0.375rem" }}>The AI Shortcut Stack</div>
+                <div style={{ fontSize: "0.875rem", color: "var(--text-secondary)", lineHeight: 1.5 }}>80 copy-paste prompts across 10 business categories. Every prompt includes bracketed placeholders, a "when to use" note, and which AI model works best. PDF + Notion template.</div>
+              </div>
+              <div style={{ fontSize: "0.8125rem", color: "var(--text-muted)", whiteSpace: "nowrap", flexShrink: 0 }}>Value: $79</div>
+            </div>
+
+            {/* Bonus 1 */}
+            <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid var(--border)", borderRadius: 10, padding: "1rem 1.25rem", display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem" }}>
+              <div>
+                <div style={{ fontSize: "0.6875rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#fbbf24", marginBottom: "0.25rem" }}>Bonus</div>
+                <div style={{ fontWeight: 700, color: "var(--text-primary)", marginBottom: "0.375rem" }}>Quick Start Cheat Sheet</div>
+                <div style={{ fontSize: "0.875rem", color: "var(--text-secondary)", lineHeight: 1.5 }}>A one-page lookup table. Find what you need to do, get the exact prompt name and number. No browsing, no guessing — just scan and go.</div>
+              </div>
+              <div style={{ fontSize: "0.8125rem", color: "var(--text-muted)", whiteSpace: "nowrap", flexShrink: 0 }}>Value: $49</div>
+            </div>
+
+            {/* Bonus 2 */}
+            <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid var(--border)", borderRadius: 10, padding: "1rem 1.25rem", display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem" }}>
+              <div>
+                <div style={{ fontSize: "0.6875rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#fbbf24", marginBottom: "0.25rem" }}>Bonus</div>
+                <div style={{ fontWeight: 700, color: "var(--text-primary)", marginBottom: "0.375rem" }}>5 Prompt Chain Workflows</div>
+                <div style={{ fontSize: "0.875rem", color: "var(--text-secondary)", lineHeight: 1.5 }}>Turn single prompts into complete systems. Five step-by-step workflows for cold outreach, marketing launches, hiring, customer recovery, and content creation.</div>
+              </div>
+              <div style={{ fontSize: "0.8125rem", color: "var(--text-muted)", whiteSpace: "nowrap", flexShrink: 0 }}>Value: $49</div>
+            </div>
+          </div>
+
           <div style={{ display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap", marginBottom: "0.75rem" }}>
             <a
               href={STRIPE_URL}
@@ -188,11 +214,10 @@ export default async function ReportPage({
                 fontWeight: 700, fontSize: "1rem", textDecoration: "none",
               }}
             >
-              Get the AI Shortcut Stack — $19 →
+              Get Everything — $19 →
             </a>
-            <div style={{ fontSize: "0.875rem", color: "var(--text-muted)" }}>
-              <span style={{ textDecoration: "line-through", marginRight: "0.375rem" }}>$49</span>
-              <span style={{ color: "#22c55e", fontWeight: 600 }}>Launch price</span>
+            <div style={{ fontSize: "0.875rem", color: "var(--text-secondary)" }}>
+              Total value: <span style={{ textDecoration: "line-through", color: "var(--text-muted)" }}>$177</span> — <span style={{ color: "#22c55e", fontWeight: 700 }}>Yours for $19</span>
             </div>
           </div>
           <p style={{ fontSize: "0.8125rem", color: "var(--text-muted)" }}>
