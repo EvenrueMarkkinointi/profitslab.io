@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { createServiceClient } from "@/lib/supabase";
 import type { Tier, Opportunity, CategoryScore } from "@/lib/questions";
+import { PixelEvent } from "@/components/PixelEvent";
 
 const STRIPE_URL = "https://buy.stripe.com/eVqdRa99xaaKdXgbUh6kg01";
 
@@ -38,6 +39,7 @@ export default async function ReportPage({
 
   return (
     <>
+      <PixelEvent event="Lead" />
       <nav className="audit-nav">
         <div className="audit-nav-inner">
           <Link href="/audit" className="nav-logo" style={{ color: "var(--text-primary)", textDecoration: "none", display: "flex", alignItems: "center", gap: "0.5rem", fontWeight: 700, fontSize: "0.875rem" }}>
