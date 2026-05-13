@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "AI Audit in a Box — Find Where AI Can Save You the Most Time",
+  title: "Free AI Opportunity Audit — Find Your Best AI Wins in 15 Minutes",
   description:
-    "A 20-question self-audit that maps exactly where AI can save you the most time and money. Takes 15 minutes. Gives you a personalized action plan.",
+    "A free AI opportunity audit for business owners who know they should use AI — but don't know where to start. 20 questions, instant personalized report.",
 };
 
 export default function AuditLanding() {
@@ -31,14 +31,14 @@ export default function AuditLanding() {
           fontSize: "0.75rem", color: "var(--accent)", marginBottom: "1.5rem",
         }}>
           <span style={{ width: 6, height: 6, background: "var(--accent)", borderRadius: "50%", display: "inline-block" }}></span>
-          20 questions · 15 minutes · Instant results
+          A free AI opportunity audit for business owners who know they should use AI — but don&apos;t know where to start.
         </div>
 
         <h1 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 800, letterSpacing: "-0.02em", marginBottom: "1.25rem", maxWidth: 680 }}>
-          Find out exactly where AI can save you the most time
+          Find your best AI opportunities in 15 minutes
         </h1>
-        <p style={{ fontSize: "1.125rem", color: "var(--text-secondary)", maxWidth: 540, marginBottom: "2.5rem", lineHeight: 1.6 }}>
-          Answer 20 questions about how you run your business. Get a personalized AI opportunity map showing your biggest time-saving wins — ranked by effort and impact.
+        <p style={{ fontSize: "1.125rem", color: "var(--text-secondary)", maxWidth: 560, marginBottom: "2.5rem", lineHeight: 1.6 }}>
+          Answer 20 questions and get a personalized AI report showing where your business can save the most time, which workflows to improve first, and what to do next.
         </p>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "1rem", alignItems: "center", marginBottom: "3rem" }}>
@@ -52,20 +52,20 @@ export default function AuditLanding() {
               transition: "background-color 0.2s",
             }}
           >
-            Start the Free Audit
+            Get My Free AI Report
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </Link>
-          <span style={{ fontSize: "0.8125rem", color: "var(--text-muted)" }}>100% free · No credit card · Report emailed to you</span>
+          <span style={{ fontSize: "0.8125rem", color: "var(--text-muted)" }}>100% free · No credit card · Instant results · Report sent to your email</span>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1rem", maxWidth: 720, width: "100%", textAlign: "left" }}>
           {[
-            { icon: "🎯", title: "Personalized score", desc: "See how AI-ready your business is across 6 categories." },
-            { icon: "📋", title: "Ranked opportunities", desc: "Your biggest time-saving wins, sorted by ease and impact." },
-            { icon: "⚡", title: "Action plan", desc: "Specific next steps, not generic advice." },
+            { icon: "🎯", title: "AI readiness score", desc: "See how ready your business is across 6 key areas." },
+            { icon: "📋", title: "Top time-saving opportunities", desc: "Get your highest-impact AI use cases ranked by effort and impact." },
+            { icon: "⚡", title: "Step-by-step action plan", desc: "Know exactly what to improve first — without generic AI advice." },
           ].map((item) => (
             <div key={item.title} style={{
               background: "var(--bg-card)", border: "1px solid var(--border)",
