@@ -165,32 +165,63 @@ export default async function ReportPage({
           }}>
             Recommended for you
           </div>
-          <h3 style={{ fontSize: "1.375rem", marginBottom: "0.75rem" }}>
+          <h3 style={{ fontSize: "1.375rem", marginBottom: "0.25rem" }}>
             Execute your action plan with the AI Shortcut Stack
           </h3>
-          <p style={{ color: "var(--text-secondary)", fontSize: "0.9375rem", lineHeight: 1.6, marginBottom: "1.25rem" }}>
-            80 battle-tested AI prompts across 10 business categories — the exact prompts that match the opportunities in your report. Plus a Notion template, quick-start guide, and two free bonuses.
+          <p style={{ color: "var(--text-muted)", fontSize: "0.875rem", marginBottom: "1.5rem" }}>
+            Three resources. One price. Instant download.
           </p>
-          <ul style={{ listStyle: "none", padding: 0, margin: "0 0 1.5rem 0", fontSize: "0.9375rem", color: "var(--text-secondary)" }}>
-            <li style={{ marginBottom: "0.5rem" }}>✓ 80 prompts organized by business category</li>
-            <li style={{ marginBottom: "0.5rem" }}>✓ Notion template for your workspace</li>
-            <li style={{ marginBottom: "0.5rem" }}>✓ Prompt chain workflows (bonus)</li>
-            <li style={{ marginBottom: "0.5rem" }}>✓ Quick-start cheat sheet (bonus)</li>
-            <li>✓ 14-day money-back guarantee</li>
-          </ul>
-          <a
-            href={STRIPE_URL}
-            style={{
-              display: "inline-flex", alignItems: "center", gap: "0.5rem",
-              background: "var(--accent)", color: "white",
-              padding: "0.9375rem 2rem", borderRadius: 10,
-              fontWeight: 700, fontSize: "1rem", textDecoration: "none",
-            }}
-          >
-            Get the AI Shortcut Stack →
-          </a>
-          <p style={{ marginTop: "0.75rem", fontSize: "0.8125rem", color: "var(--text-muted)" }}>
-            One-time payment · Instant download
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginBottom: "1.5rem" }}>
+            {/* Core product */}
+            <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid var(--border)", borderRadius: 10, padding: "1rem 1.25rem", display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem" }}>
+              <div>
+                <div style={{ fontSize: "0.6875rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--accent)", marginBottom: "0.25rem" }}>Core Product</div>
+                <div style={{ fontWeight: 700, color: "var(--text-primary)", marginBottom: "0.375rem" }}>The AI Shortcut Stack</div>
+                <div style={{ fontSize: "0.875rem", color: "var(--text-secondary)", lineHeight: 1.5 }}>80 copy-paste prompts across 10 business categories. Every prompt includes bracketed placeholders, a "when to use" note, and which AI model works best. PDF + Notion template.</div>
+              </div>
+              <div style={{ fontSize: "0.8125rem", color: "var(--text-muted)", whiteSpace: "nowrap", flexShrink: 0 }}>Value: $79</div>
+            </div>
+
+            {/* Bonus 1 */}
+            <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid var(--border)", borderRadius: 10, padding: "1rem 1.25rem", display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem" }}>
+              <div>
+                <div style={{ fontSize: "0.6875rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#fbbf24", marginBottom: "0.25rem" }}>Bonus</div>
+                <div style={{ fontWeight: 700, color: "var(--text-primary)", marginBottom: "0.375rem" }}>Quick Start Cheat Sheet</div>
+                <div style={{ fontSize: "0.875rem", color: "var(--text-secondary)", lineHeight: 1.5 }}>A one-page lookup table. Find what you need to do, get the exact prompt name and number. No browsing, no guessing — just scan and go.</div>
+              </div>
+              <div style={{ fontSize: "0.8125rem", color: "var(--text-muted)", whiteSpace: "nowrap", flexShrink: 0 }}>Value: $49</div>
+            </div>
+
+            {/* Bonus 2 */}
+            <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid var(--border)", borderRadius: 10, padding: "1rem 1.25rem", display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "1rem" }}>
+              <div>
+                <div style={{ fontSize: "0.6875rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "#fbbf24", marginBottom: "0.25rem" }}>Bonus</div>
+                <div style={{ fontWeight: 700, color: "var(--text-primary)", marginBottom: "0.375rem" }}>5 Prompt Chain Workflows</div>
+                <div style={{ fontSize: "0.875rem", color: "var(--text-secondary)", lineHeight: 1.5 }}>Turn single prompts into complete systems. Five step-by-step workflows for cold outreach, marketing launches, hiring, customer recovery, and content creation.</div>
+              </div>
+              <div style={{ fontSize: "0.8125rem", color: "var(--text-muted)", whiteSpace: "nowrap", flexShrink: 0 }}>Value: $49</div>
+            </div>
+          </div>
+
+          <div style={{ display: "flex", alignItems: "center", gap: "1rem", flexWrap: "wrap", marginBottom: "0.75rem" }}>
+            <a
+              href={STRIPE_URL}
+              style={{
+                display: "inline-flex", alignItems: "center", gap: "0.5rem",
+                background: "var(--accent)", color: "white",
+                padding: "0.9375rem 2rem", borderRadius: 10,
+                fontWeight: 700, fontSize: "1rem", textDecoration: "none",
+              }}
+            >
+              Get Everything — $19 →
+            </a>
+            <div style={{ fontSize: "0.875rem", color: "var(--text-secondary)" }}>
+              Total value: <span style={{ textDecoration: "line-through", color: "var(--text-muted)" }}>$177</span> — <span style={{ color: "#22c55e", fontWeight: 700 }}>Yours for $19</span>
+            </div>
+          </div>
+          <p style={{ fontSize: "0.8125rem", color: "var(--text-muted)" }}>
+            One-time payment · Instant download · 14-day money-back guarantee
           </p>
         </div>
 
