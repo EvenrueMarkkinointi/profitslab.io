@@ -51,7 +51,7 @@ export default function AuditStart() {
           Before we start
         </h1>
         <p style={{ color: "var(--text-secondary)", marginBottom: "2rem", lineHeight: 1.6 }}>
-          We&apos;ll send your full report to your email. The audit takes about 15 minutes.
+          We&apos;ll send your full report to your email. The audit takes about 5 minutes.
         </p>
 
         <form onSubmit={handleStart} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Free AI Opportunity Audit — Find Your Best AI Wins in 15 Minutes",
+  title: "Free AI Opportunity Audit — Find Your Best AI Wins in 5 Minutes",
   description:
     "A free AI opportunity audit for business owners who know they should use AI — but don't know where to start. 20 questions, instant personalized report.",
 };
@@ -35,7 +35,7 @@ export default function AuditLanding() {
         </div>
 
         <h1 style={{ fontSize: "clamp(2rem, 5vw, 3rem)", fontWeight: 800, letterSpacing: "-0.02em", marginBottom: "1.25rem", maxWidth: 680 }}>
-          Find your best AI opportunities in 15 minutes
+          Find your best AI opportunities in 5 minutes
         </h1>
         <p style={{ fontSize: "1.125rem", color: "var(--text-secondary)", maxWidth: 560, marginBottom: "2.5rem", lineHeight: 1.6 }}>
           Answer 20 questions and get a personalized AI report showing where your business can save the most time, which workflows to improve first, and what to do next.
