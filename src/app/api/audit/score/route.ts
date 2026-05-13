@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
     // Trigger GHL email with the report link (lead magnet delivery)
     if (assessment.email && process.env.GHL_WEBHOOK_URL) {
       const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://profitslab.io";
-      fetch(process.env.GHL_WEBHOOK_URL, {
+      await fetch(process.env.GHL_WEBHOOK_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
