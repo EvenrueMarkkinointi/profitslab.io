@@ -24,7 +24,7 @@ export default function AuditLanding() {
       </nav>
 
       {/* Hero */}
-      <div className="audit-container" style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", paddingTop: "8rem" }}>
+      <div className="audit-container" style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", paddingTop: "4rem" }}>
         <div style={{
           display: "inline-flex", alignItems: "center", gap: "0.5rem",
           background: "rgba(59,130,246,0.1)", border: "1px solid rgba(59,130,246,0.25)",
@@ -63,7 +63,7 @@ export default function AuditLanding() {
         </div>
 
         {/* Feature cards */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1rem", maxWidth: 720, width: "100%", textAlign: "left", marginBottom: "5rem" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "1rem", maxWidth: 720, width: "100%", textAlign: "left", marginBottom: "2.5rem" }}>
           {[
             { icon: "🎯", title: "AI readiness score", desc: "See how ready your business is across 6 key areas." },
             { icon: "📋", title: "Top time-saving opportunities", desc: "Get your highest-impact AI use cases ranked by effort and impact." },
@@ -82,7 +82,7 @@ export default function AuditLanding() {
       </div>
 
       {/* Report preview mockup */}
-      <div style={{ background: "var(--bg-card)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)", padding: "5rem 1.5rem" }}>
+      <div style={{ background: "var(--bg-card)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)", padding: "3rem 1.5rem" }}>
         <div style={{ maxWidth: 760, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
             <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 800, marginBottom: "0.75rem" }}>
