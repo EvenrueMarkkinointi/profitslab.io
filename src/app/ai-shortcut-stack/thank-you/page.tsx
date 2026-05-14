@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PixelEvent } from "@/components/PixelEvent";
 
 export const metadata: Metadata = {
   title: "Thank You — AI Shortcut Stack",
@@ -7,6 +8,8 @@ export const metadata: Metadata = {
 
 export default function ThankYou() {
   return (
+    <>
+      <PixelEvent event="Purchase" params={{ value: 19, currency: "USD" }} />
     <div
       style={{
         fontFamily: "Inter, -apple-system, BlinkMacSystemFont, sans-serif",
@@ -157,5 +160,6 @@ export default function ThankYou() {
         Didn&apos;t get the email? Check spam or <a href="mailto:hello@profitslab.io">contact us</a>.
       </p>
     </div>
+    </>
   );
 }
