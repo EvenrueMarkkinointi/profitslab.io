@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: "What format is this?",
-    a: "You get three files: the main PDF guide (80 pages), a Notion template you can duplicate to your workspace, plus two bonus PDFs — the Quick Start Cheat Sheet and Prompt Chain Workflows.",
+    a: "You get three files: the main PDF guide (80 pages), plus two bonus PDFs — the Quick Start Cheat Sheet and Prompt Chain Workflows.",
   },
   {
     q: "Do I need to know how to write prompts?",
@@ -120,7 +120,7 @@ export default function Home() {
               </div>
             </div>
             <div className="hero-trust">
-              {["Instant access", "PDF + Notion version", "Works with ChatGPT, Claude and Gemini", "14-day refund guarantee"].map((item) => (
+              {["Instant access", "PDF format", "Works with ChatGPT, Claude and Gemini", "14-day refund guarantee"].map((item) => (
                 <div key={item} className="trust-item">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
@@ -392,7 +392,6 @@ export default function Home() {
             {[
               { label: "80 ready-to-use business prompts", val: "" },
               { label: "PDF version", val: "" },
-              { label: "Notion version", val: "" },
               { label: "AI cheat sheet", val: "" },
               { label: "5 prompt-chain workflows", val: "" },
               { label: "Instant email delivery", val: "" },

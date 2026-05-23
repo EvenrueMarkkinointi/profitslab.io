@@ -42,7 +42,6 @@ export default function Terms() {
           <p>AI Shortcut Stack is a digital product consisting of:</p>
           <ul>
             <li>A PDF guide containing 80 AI prompts organized across 10 business categories</li>
-            <li>A Notion template with the same prompts for easy organization and access</li>
             <li>A quick-start guide for getting the most out of the prompts</li>
           </ul>
           <p>The Product is designed to help small business owners, freelancers, and marketing professionals use AI tools (such as ChatGPT, Claude, and Gemini) more effectively for common business tasks.</p>
@@ -58,7 +57,6 @@ export default function Terms() {
             <li>Use the prompts for your own business or personal purposes</li>
             <li>Share the Product with up to 5 team members within your organization</li>
             <li>Modify the prompts for your specific use cases</li>
-            <li>Use the Notion template within your own Notion workspace</li>
           </ul>
 
           <h3>Prohibited Uses</h3>

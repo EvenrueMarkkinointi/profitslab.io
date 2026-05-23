@@ -46,7 +46,7 @@ export default function ThankYou() {
         </div>
         <div className="step">
           <div className="step-num">2</div>
-          <div className="step-text"><strong>Download the PDF</strong> and duplicate the Notion template to your workspace.</div>
+          <div className="step-text"><strong>Download the PDF</strong> and open it in your preferred viewer.</div>
         </div>
         <div className="step">
           <div className="step-num">3</div>

@@ -180,7 +180,7 @@ export default async function ReportPage({
               <div>
                 <div style={{ fontSize: "0.6875rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--accent)", marginBottom: "0.25rem" }}>Core Product</div>
                 <div style={{ fontWeight: 700, color: "var(--text-primary)", marginBottom: "0.375rem" }}>The AI Shortcut Stack</div>
-                <div style={{ fontSize: "0.875rem", color: "var(--text-secondary)", lineHeight: 1.5 }}>80 copy-paste prompts across 10 business categories. Every prompt includes bracketed placeholders, a &ldquo;when to use&rdquo; note, and which AI model works best. PDF + Notion template.</div>
+                <div style={{ fontSize: "0.875rem", color: "var(--text-secondary)", lineHeight: 1.5 }}>80 copy-paste prompts across 10 business categories. Every prompt includes bracketed placeholders, a &ldquo;when to use&rdquo; note, and which AI model works best. PDF format.</div>
               </div>
               <div style={{ fontSize: "0.8125rem", color: "var(--text-muted)", whiteSpace: "nowrap", flexShrink: 0 }}>Value: $79</div>
             </div>
