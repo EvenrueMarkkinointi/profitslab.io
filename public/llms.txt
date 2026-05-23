@@ -1,0 +1,27 @@
+# ProfitSlab
+
+> AI Shortcut Stack — 80 copy-paste AI prompts for business tasks.
+
+ProfitSlab helps small business owners, freelancers, and marketers get better results from AI tools like ChatGPT, Claude, and Gemini by providing ready-to-use prompt templates organized by business function.
+
+## Products
+
+- [AI Shortcut Stack](https://www.profitslab.io/): 80 copy-paste prompts for sales, marketing, operations, hiring, and customer communication. $19 one-time payment. Includes Quick Start Cheat Sheet and Prompt Chain Workflows guide.
+- [Free AI Audit](https://www.profitslab.io/audit): 20-question assessment that generates a personalized AI opportunity report showing where your business can save the most time.
+
+## Categories
+
+Sales & Outreach, Marketing & Content, Customer Communication, Hiring & Team, Operations & SOPs, Finance & Admin, Strategy & Planning, Social Media, Product Management, Leadership & Management.
+
+## Key Facts
+
+- Price: $19 USD one-time (no subscription)
+- Format: PDF (80 pages + 2 bonus PDFs)
+- Compatibility: ChatGPT, Claude, Gemini, and any AI that accepts text
+- License: Personal use + up to 5 team members
+- Refund: 14-day money-back guarantee
+- Updated: May 2026
+
+## Company
+
+ProfitSlab is operated by Evenrue Markkinointi Oy (Business ID: 3159075-2), based in Helsinki, Finland. Contact: hello@profitslab.io

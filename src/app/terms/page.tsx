@@ -2,8 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — ProfitSlab",
-  description: "Terms of Service for ProfitSlab and AI Shortcut Stack.",
+  title: "Terms of Service",
+  description: "Terms of Service for ProfitSlab and AI Shortcut Stack digital products.",
+  robots: { index: false, follow: true },
+  alternates: { canonical: "https://www.profitslab.io/terms" },
+  openGraph: {
+    title: "Terms of Service — ProfitSlab",
+    description: "Terms of Service for ProfitSlab and AI Shortcut Stack.",
+    url: "https://www.profitslab.io/terms",
+    type: "website",
+  },
 };
 
 export default function Terms() {

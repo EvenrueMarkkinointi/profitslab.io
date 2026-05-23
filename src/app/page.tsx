@@ -80,6 +80,48 @@ export default function Home() {
 
   return (
     <>
+      {/* Product + FAQ structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: "AI Shortcut Stack",
+            description:
+              "80 ready-to-use AI prompts for business tasks including sales, marketing, hiring, operations and customer communication. Works with ChatGPT, Claude, and Gemini.",
+            brand: { "@type": "Organization", name: "ProfitSlab", url: "https://www.profitslab.io" },
+            offers: {
+              "@type": "Offer",
+              price: "19",
+              priceCurrency: "USD",
+              availability: "https://schema.org/InStock",
+              url: "https://www.profitslab.io/",
+              priceValidUntil: "2026-12-31",
+              seller: { "@type": "Organization", name: "ProfitSlab" },
+            },
+            aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "2379" },
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              { "@type": "Question", name: "Can I use this with the free version of ChatGPT?", acceptedAnswer: { "@type": "Answer", text: "Yes. All prompts work with ChatGPT (free and Plus), Claude (free and Pro), Google Gemini, and any other AI that accepts text. No API keys, no integrations, no setup." } },
+              { "@type": "Question", name: "What format is the AI Shortcut Stack?", acceptedAnswer: { "@type": "Answer", text: "You get three files: the main PDF guide (80 pages), plus two bonus PDFs — the Quick Start Cheat Sheet and Prompt Chain Workflows." } },
+              { "@type": "Question", name: "Do I need to know how to write prompts?", acceptedAnswer: { "@type": "Answer", text: "No. Every prompt is copy-paste ready. Just replace the bracketed placeholders with your details and paste into ChatGPT." } },
+              { "@type": "Question", name: "Can I share the AI Shortcut Stack with my team?", acceptedAnswer: { "@type": "Answer", text: "Yes — up to 5 people per purchase. For larger teams, email hello@profitslab.io for a team license." } },
+              { "@type": "Question", name: "What if I don't like the AI Shortcut Stack?", acceptedAnswer: { "@type": "Answer", text: "Email hello@profitslab.io within 14 days for a full refund. No forms, no friction, no questions asked." } },
+              { "@type": "Question", name: "How is the Shortcut Stack different from the free AI Audit?", acceptedAnswer: { "@type": "Answer", text: "The AI Audit tells you where AI can help your business most. The Shortcut Stack gives you the actual prompts to act on those opportunities. They work best together." } },
+            ],
+          }),
+        }}
+      />
+
       {/* Navigation */}
       <nav className="nav">
         <div className="nav-content">
@@ -255,7 +297,7 @@ export default function Home() {
       </section>
 
       {/* What's inside — categories */}
-      <section className="section">
+      <section className="section" id="prompts">
         <div className="section-header">
           <h2>80 prompts organized by business task</h2>
           <p>Use the stack to create better first drafts, clearer processes and faster replies — without learning prompt engineering.</p>
@@ -384,7 +426,7 @@ export default function Home() {
       </section>
 
       {/* Workflow Preview — visual flow diagrams */}
-      <section className="workflow-section">
+      <section className="workflow-section" id="workflows">
         <div className="section-header">
           <h2>Prompts are tools. Chains are systems.</h2>
           <p>The bonus Prompt Chain Workflows guide shows you how to connect prompts into complete business processes:</p>
@@ -392,7 +434,7 @@ export default function Home() {
         <div className="workflow-chains">
           {workflowChains.map((chain) => (
             <div key={chain.title} className="workflow-chain">
-              <h4 className="chain-title">{chain.title}</h4>
+              <h3 className="chain-title">{chain.title}</h3>
               <div className="chain-steps">
                 {chain.steps.map((step, i) => (
                   <div key={step} className="chain-step-wrapper">
@@ -411,7 +453,7 @@ export default function Home() {
 
 
       {/* Pricing */}
-      <section className="cta-section" id="buy" ref={pricingRef as React.RefObject<HTMLElement>}>
+      <section className="cta-section" id="pricing" ref={pricingRef as React.RefObject<HTMLElement>}>
         <div className="cta-box">
           <h2>Get the complete AI Shortcut Stack</h2>
           <p>Everything you need to start getting better output from AI today.</p>
@@ -503,7 +545,7 @@ export default function Home() {
       </div>
 
       {/* FAQ */}
-      <section className="faq-section">
+      <section className="faq-section" id="faq">
         <div className="section">
           <div className="section-header">
             <h2>Questions?</h2>
@@ -543,9 +585,11 @@ export default function Home() {
             <span>ProfitSlab</span>
           </div>
           <div className="footer-links">
+            <Link href="/#pricing">AI Shortcut Stack</Link>
+            <Link href="/audit">Free AI Audit</Link>
             <a href="mailto:hello@profitslab.io">Contact</a>
-            <a href="/privacy">Privacy</a>
-            <a href="/terms">Terms</a>
+            <Link href="/privacy">Privacy</Link>
+            <Link href="/terms">Terms</Link>
           </div>
         </div>
         <p className="footer-copyright">© 2026 ProfitSlab. All rights reserved. · Powered by <a href="https://www.evenrue.fi/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-muted)", textDecoration: "none" }}>Evenrue</a></p>
