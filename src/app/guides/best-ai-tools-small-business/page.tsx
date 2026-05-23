@@ -196,7 +196,7 @@ export default function BestAIToolsSmallBusiness() {
 
             {/* TOC */}
             <nav className="article-toc" aria-label="Table of contents">
-              <strong>What you'll learn:</strong>
+              <strong>What you&apos;ll learn:</strong>
               <ul>
                 <li><a href="#foundation">General-Purpose AI (Start Here)</a></li>
                 <li><a href="#customer-service">Customer Service AI</a></li>
@@ -213,18 +213,18 @@ export default function BestAIToolsSmallBusiness() {
             {/* Intro */}
             <section>
               <p>
-                Most "best AI tools" lists are written by people who don't run businesses. They rank
-                features you'll never use and ignore the one thing that matters: <strong>does this tool
+                Most &quot;best AI tools&quot; lists are written by people who don&apos;t run businesses. They rank
+                features you&apos;ll never use and ignore the one thing that matters: <strong>does this tool
                 save you time or make you money?</strong>
               </p>
               <p>
                 This list is different. Every tool here was tested on real small business tasks — writing
-                customer emails, finding leads, creating content, tracking expenses. If it didn't save at
-                least an hour per week, it didn't make the cut.
+                customer emails, finding leads, creating content, tracking expenses. If it didn&apos;t save at
+                least an hour per week, it didn&apos;t make the cut.
               </p>
               <p>
-                <strong>One rule before we start:</strong> Don't buy everything. Most small businesses
-                need 2–3 tools maximum. The rest is waste. We'll show you the minimum effective stack at
+                <strong>One rule before we start:</strong> Don&apos;t buy everything. Most small businesses
+                need 2–3 tools maximum. The rest is waste. We&apos;ll show you the minimum effective stack at
                 the end.
               </p>
             </section>
@@ -254,14 +254,14 @@ export default function BestAIToolsSmallBusiness() {
               </div>
 
               <p>
-                <strong>Our recommendation:</strong> Start with ChatGPT Plus ($20/mo). It's the most
+                <strong>Our recommendation:</strong> Start with ChatGPT Plus ($20/mo). It&apos;s the most
                 versatile and has the largest ecosystem of guides, plugins, and integrations. Upgrade to
                 Claude 4 Pro if you handle sensitive client data or write long documents (proposals,
                 contracts, research reports).
               </p>
 
               <div className="article-cta-box">
-                <h3>Already have ChatGPT but don't know what to ask?</h3>
+                <h3>Already have ChatGPT but don&apos;t know what to ask?</h3>
                 <p>
                   The <Link href="/products/prompt-stack">AI Shortcut Stack</Link> has 80 copy-paste
                   prompts for customer service, sales, marketing, and operations — designed specifically
@@ -298,7 +298,7 @@ export default function BestAIToolsSmallBusiness() {
               </div>
 
               <p>
-                <strong>Our recommendation:</strong> If you're on Shopify or WooCommerce, start with Tidio's
+                <strong>Our recommendation:</strong> If you&apos;re on Shopify or WooCommerce, start with Tidio&apos;s
                 free tier. If you use Zendesk already, add their AI module. For most small businesses,
                 AI-enhanced live chat pays for itself within a week by reducing response time from hours
                 to seconds.
@@ -315,7 +315,7 @@ export default function BestAIToolsSmallBusiness() {
             <section id="sales">
               <h2>Sales & Outreach AI: Find and Close More Deals</h2>
               <p>
-                The biggest time sink in sales isn't selling — it's finding the right people to sell to
+                The biggest time sink in sales isn&apos;t selling — it&apos;s finding the right people to sell to
                 and writing emails they actually open. These tools fix both.
               </p>
 
@@ -338,7 +338,7 @@ export default function BestAIToolsSmallBusiness() {
               <p>
                 <strong>Our recommendation:</strong> Apollo.io has the best free tier for lead finding —
                 you can build targeted lists without paying. Pair it with the cold email prompts from the{" "}
-                <Link href="/products/prompt-stack">AI Shortcut Stack</Link> and you'll cut list-building
+                <Link href="/products/prompt-stack">AI Shortcut Stack</Link> and you&apos;ll cut list-building
                 time from 3 hours to 20 minutes.
               </p>
             </section>
@@ -347,8 +347,8 @@ export default function BestAIToolsSmallBusiness() {
             <section id="marketing">
               <h2>Marketing & Content AI: Create Faster Without Losing Quality</h2>
               <p>
-                Marketing is where AI shines brightest — but it's also where most businesses waste money
-                on tools they don't need. Here are the ones that actually speed up real work.
+                Marketing is where AI shines brightest — but it&apos;s also where most businesses waste money
+                on tools they don&apos;t need. Here are the ones that actually speed up real work.
               </p>
 
               <div className="tool-grid">
@@ -368,7 +368,7 @@ export default function BestAIToolsSmallBusiness() {
               </div>
 
               <p>
-                <strong>Our recommendation:</strong> Copy.ai's free tier handles most small business
+                <strong>Our recommendation:</strong> Copy.ai&apos;s free tier handles most small business
                 content needs. Upgrade to Jasper only if you produce 10+ long-form pieces per month. For
                 social media, Canva Magic Studio is unbeatable — it generates graphics, captions, and
                 scheduling in one tool.
@@ -401,8 +401,8 @@ export default function BestAIToolsSmallBusiness() {
               </div>
 
               <p>
-                <strong>Our recommendation:</strong> Start with Zapier's free tier for simple
-                connections (e.g., "when I get a Stripe payment, add the customer to my email list").
+                <strong>Our recommendation:</strong> Start with Zapier&apos;s free tier for simple
+                connections (e.g., &quot;when I get a Stripe payment, add the customer to my email list&quot;).
                 Move to Make when you need complex, multi-step workflows. Notion AI is a no-brainer if
                 you already use Notion for docs.
               </p>
@@ -441,7 +441,7 @@ export default function BestAIToolsSmallBusiness() {
 
             {/* Decision Framework */}
             <section id="how-to-choose">
-              <h2>How to Choose: The "One Tool Per Job" Rule</h2>
+              <h2>How to Choose: The &quot;One Tool Per Job&quot; Rule</h2>
               <p>
                 The biggest mistake small businesses make with AI is buying too many tools. Each new
                 subscription adds complexity, learning time, and monthly cost. The businesses that get
@@ -449,14 +449,14 @@ export default function BestAIToolsSmallBusiness() {
               </p>
 
               <p style={{ textAlign: "center", fontSize: "1.25rem", fontWeight: 700, margin: "2rem 0" }}>
-                One tool per job. No duplicates. No "just in case."
+                One tool per job. No duplicates. No &quot;just in case.&quot;
               </p>
 
               <h3>The Decision Framework</h3>
               <ol>
                 <li>
                   <strong>Identify your biggest time sink.</strong> Where do you spend 3+ hours per week
-                  on work that doesn't require your specific expertise? That's your first AI target.
+                  on work that doesn&apos;t require your specific expertise? That&apos;s your first AI target.
                 </li>
                 <li>
                   <strong>Pick the tool with the best free tier.</strong> Test for 2 weeks. If it saves
@@ -467,7 +467,7 @@ export default function BestAIToolsSmallBusiness() {
                   you barely touch.
                 </li>
                 <li>
-                  <strong>Review quarterly.</strong> Cancel anything you haven't opened in 30 days.
+                  <strong>Review quarterly.</strong> Cancel anything you haven&apos;t opened in 30 days.
                 </li>
               </ol>
 
@@ -482,7 +482,7 @@ export default function BestAIToolsSmallBusiness() {
             <section id="stack">
               <h2>Our Recommended AI Stack: $50/Month Maximum</h2>
               <p>
-                Here's the minimum effective stack for most small businesses. Total cost: under $50/month
+                Here&apos;s the minimum effective stack for most small businesses. Total cost: under $50/month
                 with free tiers. No bloat. No overlap.
               </p>
 
@@ -549,7 +549,7 @@ export default function BestAIToolsSmallBusiness() {
 
               <p>
                 <strong>Upgrade path:</strong> When you hit free tier limits (usually around 50–100
-                customers or 10+ content pieces per month), upgrade the tool that matters most. Don't
+                customers or 10+ content pieces per month), upgrade the tool that matters most. Don&apos;t
                 upgrade everything at once — your stack should grow with your business, not ahead of it.
               </p>
 

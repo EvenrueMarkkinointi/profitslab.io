@@ -196,13 +196,13 @@ export default function AICustomerServicePrompts() {
                 <div className="prompt-label">Prompt: Complaint Response</div>
                 <pre className="prompt-text">
 {`A customer emailed this complaint:
-"[paste complaint here]"
+&quot;[paste complaint here]&quot;
 
 Write a reply that:
 1. Acknowledges their frustration in one sentence
 2. Explains what happened in one sentence (no excuses)
 3. Offers [specific solution/refund/replacement]
-4. Ends with: "Reply to this email if you need anything else — I'm here."
+4. Ends with: &quot;Reply to this email if you need anything else — I&apos;m here.&quot;
 Keep it under 150 words. Tone: [friendly/professional/calm].`}
                 </pre>
               </div>
@@ -231,8 +231,8 @@ Policy: [full refund within X days / partial refund / store credit].
 Write a reply that:
 1. Apologizes for the experience (not the product — the experience)
 2. Confirms the refund is approved
-3. States exactly when they'll see the money (e.g., "3–5 business days")
-4. Asks if they'd like a brief call to understand what went wrong
+3. States exactly when they&apos;ll see the money (e.g., &quot;3–5 business days&quot;)
+4. Asks if they&apos;d like a brief call to understand what went wrong
 Keep it under 120 words. Tone: generous, not defensive.`}
                 </pre>
               </div>
@@ -246,7 +246,7 @@ Write a reply that:
 1. Validates their frustration
 2. Explains the policy transparently
 3. Offers the partial refund/credit PLUS a small bonus ([discount code/free month/etc.])
-4. Gives them an easy way to escalate if they're not satisfied
+4. Gives them an easy way to escalate if they&apos;re not satisfied
 Keep it under 140 words. No corporate language.`}
                 </pre>
               </div>
@@ -263,7 +263,7 @@ Keep it under 140 words. No corporate language.`}
               <div className="prompt-block">
                 <div className="prompt-label">Prompt: FAQ Answer Generator</div>
                 <pre className="prompt-text">
-{`Question: "[paste customer question]"
+{`Question: &quot;[paste customer question]&quot;
 
 Our answer should include:
 - Direct answer in the first sentence
@@ -278,14 +278,14 @@ Keep it under 100 words. Tone: [friendly/professional].`}
               <div className="prompt-block">
                 <div className="prompt-label">Prompt: &quot;How Do I...&quot; Step-by-Step</div>
                 <pre className="prompt-text">
-{`Customer asked: "How do I [task]?"
+{`Customer asked: &quot;How do I [task]?&quot;
 
 Write a numbered list of steps (3–5 max). Each step must be:
 - One action only
 - Specific enough to follow without guessing
 - In plain language, no jargon
 
-After the steps, add: "If you get stuck on any step, reply here and I'll walk you through it."`}
+After the steps, add: &quot;If you get stuck on any step, reply here and I&apos;ll walk you through it.&quot;`}
                 </pre>
               </div>
             </section>
@@ -304,8 +304,8 @@ After the steps, add: "If you get stuck on any step, reply here and I'll walk yo
 {`Customer is angry about [issue]. They used strong language.
 
 Write a reply that:
-1. Acknowledges their anger directly: "I can see this has been frustrating..."
-2. Takes ownership: "This shouldn't have happened, and I'm fixing it now."
+1. Acknowledges their anger directly: &quot;I can see this has been frustrating...&quot;
+2. Takes ownership: &quot;This shouldn&apos;t have happened, and I&apos;m fixing it now.&quot;
 3. Gives an immediate, specific next step
 4. Offers a personal follow-up (call / direct email / manager intro)
 Keep it under 130 words. Tone: calm, confident, human.`}
@@ -319,9 +319,9 @@ Keep it under 130 words. Tone: calm, confident, human.`}
 
 Write a reply that:
 1. Thanks them for their patience
-2. Explains why you're involving [manager name/role] — not because you can't help, but because they have the authority to [specific action]
-3. States exactly when they'll hear back (e.g., "within 4 hours")
-4. Gives your direct contact in case it's urgent
+2. Explains why you&apos;re involving [manager name/role] — not because you can&apos;t help, but because they have the authority to [specific action]
+3. States exactly when they&apos;ll hear back (e.g., &quot;within 4 hours&quot;)
+4. Gives your direct contact in case it&apos;s urgent
 Keep it under 120 words.`}
                 </pre>
               </div>
@@ -384,7 +384,7 @@ Keep it under 120 words.`}
                 <li>Product defect complaint</li>
                 <li>Shipping delay complaint</li>
                 <li>Wrong item received</li>
-                <li>Service didn't meet expectations</li>
+                <li>Service didn&apos;t meet expectations</li>
                 <li>Billing issue complaint</li>
                 <li>Repeat complaint (same customer, new issue)</li>
                 <li>Social media complaint (public reply)</li>
