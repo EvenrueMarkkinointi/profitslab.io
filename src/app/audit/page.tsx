@@ -4,7 +4,25 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Free AI Opportunity Audit — Find Your Best AI Wins in 5 Minutes",
   description:
-    "A free AI opportunity audit for business owners who know they should use AI — but don't know where to start. 20 questions, instant personalized report.",
+    "Answer 20 questions and get a personalized AI report showing where your business can save the most time. Free, instant results.",
+  alternates: {
+    canonical: "https://www.profitslab.io/audit",
+  },
+  openGraph: {
+    title: "Free AI Opportunity Audit — Find Your Best AI Wins in 5 Minutes",
+    description:
+      "Answer 20 questions and get a personalized AI report showing where your business can save the most time. Free, instant results.",
+    url: "https://www.profitslab.io/audit",
+    siteName: "ProfitSlab",
+    images: [{ url: "https://www.profitslab.io/images/og-audit.png", width: 1200, height: 630 }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free AI Audit — Find Your Best AI Wins in 5 Minutes",
+    description: "20 questions → personalized AI report. Free, instant results.",
+    images: ["https://www.profitslab.io/images/og-audit.png"],
+  },
 };
 
 export default function AuditLanding() {

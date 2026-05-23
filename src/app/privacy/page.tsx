@@ -2,8 +2,16 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — ProfitSlab",
-  description: "Privacy Policy for ProfitSlab and AI Shortcut Stack.",
+  title: "Privacy Policy",
+  description: "Privacy Policy for ProfitSlab and AI Shortcut Stack. How we collect, use, and protect your personal data.",
+  robots: { index: false, follow: true },
+  alternates: { canonical: "https://www.profitslab.io/privacy" },
+  openGraph: {
+    title: "Privacy Policy — ProfitSlab",
+    description: "Privacy Policy for ProfitSlab and AI Shortcut Stack.",
+    url: "https://www.profitslab.io/privacy",
+    type: "website",
+  },
 };
 
 export default function Privacy() {
