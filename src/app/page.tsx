@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import PurchaseNotification from "@/components/PurchaseNotification";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
 
 const STRIPE_URL = "https://buy.stripe.com/eVqdRa99xaaKdXgbUh6kg01";
 const AUDIT_URL = "/audit";
@@ -202,15 +204,15 @@ export default function Home() {
         </div>
         <div className="testimonials-grid">
           <figure className="testimonial-card">
-            <blockquote>&ldquo;Saved me 3 hours this week on client emails alone.&rdquo;</blockquote>
+            <blockquote>&ldquo;Saved me 3 hours this week on client emails alone. I used to stare at a blank screen for 20 minutes per email.&rdquo;</blockquote>
             <figcaption>— James R., Agency Owner</figcaption>
           </figure>
           <figure className="testimonial-card">
-            <blockquote>&ldquo;I stopped writing prompts from scratch. This is my Monday morning shortcut.&rdquo;</blockquote>
+            <blockquote>&ldquo;Wrote a job ad in 4 minutes that got 12 qualified applicants. Usually takes me an hour and it still sounds generic.&rdquo;</blockquote>
             <figcaption>— Lisa K., Freelance Marketer</figcaption>
           </figure>
           <figure className="testimonial-card">
-            <blockquote>&ldquo;Finally, prompts that actually work for B2B. Worth 10x the price.&rdquo;</blockquote>
+            <blockquote>&ldquo;The customer complaint prompt de-escalated an angry client in one reply. I didn&apos;t have to think — just filled in the blanks.&rdquo;</blockquote>
             <figcaption>— Mark S., SaaS Founder</figcaption>
           </figure>
         </div>
@@ -258,28 +260,53 @@ export default function Home() {
           <h2>80 prompts organized by business task</h2>
           <p>Use the stack to create better first drafts, clearer processes and faster replies — without learning prompt engineering.</p>
         </div>
-        <div className="categories">
+
+        {/* Featured 4 */}
+        <div className="categories-featured">
           {[
-            { name: "Sales & Outreach", icon: "phone", desc: "Cold emails, follow-ups, offer messages and sales replies." },
-            { name: "Marketing & Content", icon: "edit", desc: "Ad copy, campaign ideas, content plans and promotional angles." },
-            { name: "Customer Communication", icon: "message-circle", desc: "Support replies, complaint responses and FAQ-style answers." },
-            { name: "Operations & SOPs", icon: "monitor", desc: "Checklists, workflows, internal instructions and process documentation." },
-            { name: "Hiring & Team", icon: "users", desc: "Job posts, onboarding steps and team communication." },
-            { name: "Planning & Strategy", icon: "map", desc: "Idea prioritization, action plans and decision support." },
-            { name: "Finance & Admin", icon: "dollar-sign", desc: "Budget summaries, invoice copy and admin templates." },
-            { name: "Product & E-commerce", icon: "shopping-cart", desc: "Product descriptions, launch copy and offer framing." },
-            { name: "Email Marketing", icon: "mail", desc: "Sequences, subject lines, re-engagement and nurture emails." },
-            { name: "Social Media", icon: "instagram", desc: "Captions, hooks, content calendars and post ideas." },
+            {
+              name: "Sales & Outreach",
+              icon: "phone",
+              desc: "Cold emails, follow-ups, offer messages and sales replies.",
+              preview: "Write a cold email to [prospect] at [company]. Under 120 words. End with a soft question, not a meeting request.",
+            },
+            {
+              name: "Marketing & Content",
+              icon: "edit",
+              desc: "Ad copy, campaign ideas, content plans and promotional angles.",
+              preview: "Write 3 ad hooks for [product] targeting [audience] who worry about [pain point]. Each under 10 words.",
+            },
+            {
+              name: "Customer Communication",
+              icon: "message-circle",
+              desc: "Support replies, complaint responses and FAQ-style answers.",
+              preview: "Respond to [complaint] — acknowledge, explain, offer [solution]. Keep it under 150 words.",
+            },
+            {
+              name: "Hiring & Team",
+              icon: "users",
+              desc: "Job posts, onboarding steps and team communication.",
+              preview: "Write a job description for [role] at a [company type]. Professional but not corporate. No buzzwords.",
+            },
           ].map((cat) => (
-            <div key={cat.name} className="category">
-              <div className="category-icon">
-                <CategoryIcon name={cat.icon} />
+            <div key={cat.name} className="category-featured">
+              <div className="category-featured-top">
+                <div className="category-icon">
+                  <CategoryIcon name={cat.icon} />
+                </div>
+                <div className="category-name">{cat.name}</div>
+                <div className="category-featured-desc">{cat.desc}</div>
               </div>
-              <div className="category-name">{cat.name}</div>
-              <div className="category-count" style={{ fontSize: "0.8rem", color: "var(--text-muted)", marginTop: "0.25rem", lineHeight: 1.4 }}>{cat.desc}</div>
+              <div className="category-featured-preview">
+                <span className="category-preview-label">Example prompt</span>
+                <span className="category-preview-text">{cat.preview}</span>
+              </div>
             </div>
           ))}
         </div>
+
+        {/* Remaining 6 — expandable */}
+        <CategoriesExpand />
       </section>
 
       {/* How it works — replaced with before/after job description */}
@@ -382,35 +409,6 @@ export default function Home() {
         <p className="workflow-footnote"><strong>Included free</strong> in the stack.</p>
       </section>
 
-      {/* Audit Bridge */}
-      <section className="section">
-        <div style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 16, padding: "2.5rem", maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
-          <div style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--accent)", marginBottom: "1rem" }}>
-            Not sure where to start?
-          </div>
-          <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", marginBottom: "1rem" }}>
-            Not sure where AI would help your business most?
-          </h2>
-          <p style={{ color: "var(--text-secondary)", lineHeight: 1.7, marginBottom: "1.75rem", maxWidth: 520, margin: "0 auto 1rem" }}>
-            Take the free AI Audit first. Answer 20 questions and get a personalized report showing your biggest AI opportunities, ranked by effort and impact.
-          </p>
-          <p style={{ color: "var(--text-secondary)", lineHeight: 1.7, maxWidth: 520, margin: "0 auto 1.75rem", fontWeight: 500 }}>
-            The audit shows where to start. The Shortcut Stack gives you the prompts to take action.
-          </p>
-          <Link
-            href={AUDIT_URL}
-            style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "var(--bg-page, #0a0a0a)", color: "var(--text-primary)", border: "1px solid var(--border)", padding: "0.9rem 2rem", borderRadius: 10, fontWeight: 700, fontSize: "1rem", textDecoration: "none", marginBottom: "1rem" }}
-          >
-            Take the Free AI Audit →
-          </Link>
-          <p style={{ fontSize: "0.875rem", color: "var(--text-muted)", marginTop: "1rem" }}>
-            Already know you want better prompts?{" "}
-            <a href={STRIPE_URL} style={{ color: "var(--accent)", textDecoration: "none" }}>
-              Get the Shortcut Stack for $19.
-            </a>
-          </p>
-        </div>
-      </section>
 
       {/* Pricing */}
       <section className="cta-section" id="buy" ref={pricingRef as React.RefObject<HTMLElement>}>
@@ -484,19 +482,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="section" style={{ textAlign: "center" }}>
-        <div className="section-header">
-          <h2>Start using AI like a business tool — not a guessing game.</h2>
-          <p>Get the prompts, customize them to your business and turn repetitive tasks into reusable AI workflows.</p>
+      {/* Closing argument band */}
+      <section className="closing-band">
+        <div className="closing-band-inner">
+          <p className="closing-band-eyebrow">One decision. One minute.</p>
+          <h2 className="closing-band-heading">
+            Stop starting from scratch every Monday morning.
+          </h2>
+          <p className="closing-band-sub">
+            80 prompts. Instant download. $19 once. No subscription, no setup, no learning curve.
+          </p>
         </div>
-        <a href={STRIPE_URL} className="btn-primary btn-large" style={{ display: "inline-flex" }}>
-          Get the Shortcut Stack — $19
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a>
       </section>
 
       {/* AI Audit link — above FAQ */}
@@ -515,10 +511,11 @@ export default function Home() {
           </div>
           <div className="faq-list">
             {faqs.map((faq, i) => (
-              <div key={i} className="faq-item">
+              <div key={i} className={`faq-item${openFaq === i ? " faq-item-open" : ""}`}>
                 <button
                   className={`faq-question${openFaq === i ? " active" : ""}`}
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  aria-expanded={openFaq === i}
                 >
                   {faq.q}
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -554,6 +551,12 @@ export default function Home() {
         <p className="footer-copyright">© 2026 ProfitSlab. All rights reserved. · Powered by <a href="https://www.evenrue.fi/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-muted)", textDecoration: "none" }}>Evenrue</a></p>
       </footer>
 
+      {/* Exit intent popup */}
+      <ExitIntentPopup />
+
+      {/* Purchase notification popup */}
+      <PurchaseNotification />
+
       {/* Sticky Mobile CTA */}
       {showStickyBar && (
         <div className="sticky-mobile-cta" aria-label="Quick purchase">
@@ -563,6 +566,36 @@ export default function Home() {
         </div>
       )}
     </>
+  );
+}
+
+function CategoriesExpand() {
+  const [open, setOpen] = useState(false);
+  const rest = [
+    { name: "Operations & SOPs", icon: "monitor", desc: "Checklists, workflows, internal instructions and process documentation." },
+    { name: "Planning & Strategy", icon: "map", desc: "Idea prioritization, action plans and decision support." },
+    { name: "Finance & Admin", icon: "dollar-sign", desc: "Budget summaries, invoice copy and admin templates." },
+    { name: "Product & E-commerce", icon: "shopping-cart", desc: "Product descriptions, launch copy and offer framing." },
+    { name: "Email Marketing", icon: "mail", desc: "Sequences, subject lines, re-engagement and nurture emails." },
+    { name: "Social Media", icon: "instagram", desc: "Captions, hooks, content calendars and post ideas." },
+  ];
+  return (
+    <div className="categories-expand">
+      {open && (
+        <div className="categories categories-rest">
+          {rest.map((cat) => (
+            <div key={cat.name} className="category">
+              <div className="category-icon"><CategoryIcon name={cat.icon} /></div>
+              <div className="category-name">{cat.name}</div>
+              <div className="category-count" style={{ fontSize: "0.8rem", color: "var(--text-muted)", marginTop: "0.25rem", lineHeight: 1.4 }}>{cat.desc}</div>
+            </div>
+          ))}
+        </div>
+      )}
+      <button className="categories-toggle" onClick={() => setOpen((v) => !v)}>
+        {open ? "Hide categories ↑" : "See all 10 categories →"}
+      </button>
+    </div>
   );
 }
 
