@@ -482,19 +482,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="section" style={{ textAlign: "center" }}>
-        <div className="section-header">
-          <h2>Start using AI like a business tool — not a guessing game.</h2>
-          <p>Get the prompts, customize them to your business and turn repetitive tasks into reusable AI workflows.</p>
+      {/* Closing argument band */}
+      <section className="closing-band">
+        <div className="closing-band-inner">
+          <p className="closing-band-eyebrow">One decision. One minute.</p>
+          <h2 className="closing-band-heading">
+            Stop starting from scratch every Monday morning.
+          </h2>
+          <p className="closing-band-sub">
+            80 prompts. Instant download. $19 once. No subscription, no setup, no learning curve.
+          </p>
         </div>
-        <a href={STRIPE_URL} className="btn-primary btn-large" style={{ display: "inline-flex" }}>
-          Get the Shortcut Stack — $19
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a>
       </section>
 
       {/* AI Audit link — above FAQ */}
@@ -513,10 +511,11 @@ export default function Home() {
           </div>
           <div className="faq-list">
             {faqs.map((faq, i) => (
-              <div key={i} className="faq-item">
+              <div key={i} className={`faq-item${openFaq === i ? " faq-item-open" : ""}`}>
                 <button
                   className={`faq-question${openFaq === i ? " active" : ""}`}
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  aria-expanded={openFaq === i}
                 >
                   {faq.q}
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
