@@ -17,28 +17,34 @@ export const metadata: Metadata = {
 const upcomingGuides = [
   {
     tag: "Customer Service",
-    title: "Handle customer complaints with AI — without sounding robotic",
-    desc: "The exact prompts that de-escalate angry customers in one reply, every time.",
+    title: "AI Prompts for Customer Service That Actually Work",
+    desc: "80+ ready-to-use prompts for complaints, refunds, FAQs, and escalation handling.",
+    href: "/guides/ai-customer-service-prompts",
+    status: "live",
   },
   {
     tag: "Sales",
     title: "Cold emails that get replies: 3 AI prompts that sound like you",
     desc: "Stop writing from scratch. Fill in the blanks, paste, send.",
+    status: "soon",
   },
   {
     tag: "Operations",
     title: "Write SOPs in 10 minutes using ChatGPT: a step-by-step template",
     desc: "Turn messy processes into clear, repeatable instructions your team will actually follow.",
+    status: "soon",
   },
   {
     tag: "Marketing",
     title: "Social media content in 30 minutes: an AI workflow for busy founders",
     desc: "One session. A week of posts. No content calendar required.",
+    status: "soon",
   },
   {
     tag: "Strategy",
     title: "Use AI to analyse your business data (even if you hate spreadsheets)",
     desc: "Turn raw numbers into clear decisions — no data skills needed.",
+    status: "soon",
   },
 ];
 
@@ -63,8 +69,8 @@ export default function Guides() {
           </div>
 
           <div className="guides-coming-soon-notice">
-            <span className="guides-coming-badge">Coming soon</span>
-            <p>The first guides are in production. Sign up below to be notified when they go live.</p>
+            <span className="guides-coming-badge">New</span>
+            <p>The first guide is live. More are coming weekly. Sign up below to be notified.</p>
             <Link href="/audit" className="btn-primary" style={{ marginTop: "0.75rem", display: "inline-flex" }}>
               Take the free AI Audit in the meantime →
             </Link>
@@ -72,11 +78,21 @@ export default function Guides() {
 
           <div className="hub-guides-grid" style={{ marginTop: "3rem" }}>
             {upcomingGuides.map((g) => (
-              <div key={g.title} className="hub-guide-card hub-guide-card-preview">
+              <div key={g.title} className={`hub-guide-card ${g.status === "soon" ? "hub-guide-card-preview" : ""}`}>
                 <span className="hub-guide-tag">{g.tag}</span>
-                <h2 className="hub-guide-title">{g.title}</h2>
+                <h2 className="hub-guide-title">
+                  {g.status === "live" ? (
+                    <Link href={g.href!} className="hub-guide-link">{g.title}</Link>
+                  ) : (
+                    g.title
+                  )}
+                </h2>
                 <p className="hub-guide-desc">{g.desc}</p>
-                <span className="hub-guide-coming">Coming soon</span>
+                {g.status === "live" ? (
+                  <Link href={g.href!} className="hub-guide-link">Read now →</Link>
+                ) : (
+                  <span className="hub-guide-coming">Coming soon</span>
+                )}
               </div>
             ))}
           </div>
