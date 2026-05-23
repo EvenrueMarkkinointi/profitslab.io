@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import PurchaseNotification from "@/components/PurchaseNotification";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
 
 const STRIPE_URL = "https://buy.stripe.com/eVqdRa99xaaKdXgbUh6kg01";
 const AUDIT_URL = "/audit";
@@ -383,35 +384,6 @@ export default function Home() {
         <p className="workflow-footnote"><strong>Included free</strong> in the stack.</p>
       </section>
 
-      {/* Audit Bridge */}
-      <section className="section">
-        <div style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 16, padding: "2.5rem", maxWidth: 720, margin: "0 auto", textAlign: "center" }}>
-          <div style={{ fontSize: "0.75rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--accent)", marginBottom: "1rem" }}>
-            Not sure where to start?
-          </div>
-          <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", marginBottom: "1rem" }}>
-            Not sure where AI would help your business most?
-          </h2>
-          <p style={{ color: "var(--text-secondary)", lineHeight: 1.7, marginBottom: "1.75rem", maxWidth: 520, margin: "0 auto 1rem" }}>
-            Take the free AI Audit first. Answer 20 questions and get a personalized report showing your biggest AI opportunities, ranked by effort and impact.
-          </p>
-          <p style={{ color: "var(--text-secondary)", lineHeight: 1.7, maxWidth: 520, margin: "0 auto 1.75rem", fontWeight: 500 }}>
-            The audit shows where to start. The Shortcut Stack gives you the prompts to take action.
-          </p>
-          <Link
-            href={AUDIT_URL}
-            style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "var(--bg-page, #0a0a0a)", color: "var(--text-primary)", border: "1px solid var(--border)", padding: "0.9rem 2rem", borderRadius: 10, fontWeight: 700, fontSize: "1rem", textDecoration: "none", marginBottom: "1rem" }}
-          >
-            Take the Free AI Audit →
-          </Link>
-          <p style={{ fontSize: "0.875rem", color: "var(--text-muted)", marginTop: "1rem" }}>
-            Already know you want better prompts?{" "}
-            <a href={STRIPE_URL} style={{ color: "var(--accent)", textDecoration: "none" }}>
-              Get the Shortcut Stack for $19.
-            </a>
-          </p>
-        </div>
-      </section>
 
       {/* Pricing */}
       <section className="cta-section" id="buy" ref={pricingRef as React.RefObject<HTMLElement>}>
@@ -554,6 +526,9 @@ export default function Home() {
         </div>
         <p className="footer-copyright">© 2026 ProfitSlab. All rights reserved. · Powered by <a href="https://www.evenrue.fi/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-muted)", textDecoration: "none" }}>Evenrue</a></p>
       </footer>
+
+      {/* Exit intent popup */}
+      <ExitIntentPopup />
 
       {/* Purchase notification popup */}
       <PurchaseNotification />
