@@ -107,27 +107,6 @@ export default function Home() {
             <p className="hero-subtitle">
               80 copy-paste prompts that replace hours of writing, planning and admin. No prompt engineering required.
             </p>
-            <div className="hero-bonuses">
-              {[
-                { label: "80 copy-paste AI prompts (PDF)", value: "$49" },
-                { label: "Quick Start Cheat Sheet (bonus)", value: "$19" },
-                { label: "Prompt Chain Workflows guide (bonus)", value: "$29" },
-              ].map((item) => (
-                <div key={item.label} className="hero-bonus-row">
-                  <span className="hero-bonus-check">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                  </span>
-                  <span className="hero-bonus-label">{item.label}</span>
-                  <span className="hero-bonus-value">{item.value}</span>
-                </div>
-              ))}
-              <div className="hero-bonus-total">
-                <span>Total value</span>
-                <span className="hero-bonus-total-strike">$97</span>
-              </div>
-            </div>
             <div className="hero-cta">
               <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                 <a href={STRIPE_URL} className="btn-primary btn-large">
@@ -142,6 +121,31 @@ export default function Home() {
                   <span className="hero-price-now">$19</span>
                   <span className="hero-price-note">launch price · one-time payment</span>
                 </div>
+              </div>
+            </div>
+            <div className="hero-bonuses">
+              <div className="hero-bonuses-heading">Here is what you get</div>
+              {[
+                { label: "AI Shortcut Stack — 80 copy-paste prompts", sublabel: "PDF, organized by business task", value: "$49" },
+                { label: "Quick Start Cheat Sheet", sublabel: "Best models, tips and prompt formulas on one page", value: "$19" },
+                { label: "Prompt Chain Workflows", sublabel: "5 ready-made multi-step AI systems for real business processes", value: "$49" },
+              ].map((item) => (
+                <div key={item.label} className="hero-bonus-row">
+                  <span className="hero-bonus-check">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
+                  <span className="hero-bonus-label">
+                    <span className="hero-bonus-name">{item.label}</span>
+                    <span className="hero-bonus-sub">{item.sublabel}</span>
+                  </span>
+                  <span className="hero-bonus-value">{item.value}</span>
+                </div>
+              ))}
+              <div className="hero-bonus-total">
+                <span>Total value</span>
+                <span className="hero-bonus-total-strike">$117</span>
               </div>
             </div>
             <div className="hero-trust">
@@ -414,23 +418,45 @@ export default function Home() {
           <h2>Get the complete AI Shortcut Stack</h2>
           <p>Everything you need to start getting better output from AI today.</p>
           <div className="cta-value-recap">
+            <div className="recap-heading">Here is what you get</div>
             {[
-              { label: "80 ready-to-use business prompts", val: "" },
-              { label: "PDF version", val: "" },
-              { label: "AI cheat sheet", val: "" },
-              { label: "5 prompt-chain workflows", val: "" },
-              { label: "Instant email delivery", val: "" },
-              { label: "14-day money-back guarantee", val: "" },
+              { label: "AI Shortcut Stack — 80 copy-paste prompts", sub: "PDF, organized by business task", val: "$49" },
+              { label: "Quick Start Cheat Sheet", sub: "Best models, tips and prompt formulas on one page", val: "$19" },
+              { label: "Prompt Chain Workflows", sub: "5 ready-made multi-step AI systems for real business processes", val: "$49" },
             ].map((r) => (
               <div key={r.label} className="recap-item">
                 <span className="recap-left">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>
                   </svg>
-                  {r.label}
+                  <span>
+                    <span style={{ display: "block", color: "var(--text-primary)", fontWeight: 600 }}>{r.label}</span>
+                    <span style={{ display: "block", fontSize: "0.8rem", color: "var(--text-muted)", marginTop: "0.1rem" }}>{r.sub}</span>
+                  </span>
                 </span>
+                <span className="recap-val" style={{ textDecoration: "line-through" }}>{r.val}</span>
               </div>
             ))}
+            <div className="recap-item recap-total">
+              <span className="recap-left" style={{ fontWeight: 700, color: "var(--text-primary)" }}>Total value</span>
+              <span style={{ textDecoration: "line-through", color: "var(--text-muted)", fontWeight: 700 }}>$117</span>
+            </div>
+            <div className="recap-item" style={{ borderTop: "none", paddingTop: 0 }}>
+              <span className="recap-left" style={{ color: "var(--text-muted)", fontSize: "0.8125rem" }}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ width: 14, height: 14, flexShrink: 0, color: "var(--success)" }}>
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Instant email delivery
+              </span>
+            </div>
+            <div className="recap-item" style={{ borderTop: "none", paddingTop: 0 }}>
+              <span className="recap-left" style={{ color: "var(--text-muted)", fontSize: "0.8125rem" }}>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ width: 14, height: 14, flexShrink: 0, color: "var(--success)" }}>
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                14-day money-back guarantee
+              </span>
+            </div>
           </div>
           <div className="cta-price-block">
             <span className="price-strikethrough">$49</span>
