@@ -117,7 +117,7 @@ export default function Home() {
                   </svg>
                 </a>
                 <div className="hero-price-line">
-                  <span className="hero-price-strike">$49</span>
+                  <span className="hero-price-strike">$117</span>
                   <span className="hero-price-now">$19</span>
                   <span className="hero-price-note">launch price · one-time payment</span>
                 </div>
@@ -459,7 +459,7 @@ export default function Home() {
             </div>
           </div>
           <div className="cta-price-block">
-            <span className="price-strikethrough">$49</span>
+            <span className="price-strikethrough">$117</span>
             <span className="price-main">$19</span>
             <span className="price-label">one-time payment</span>
           </div>
