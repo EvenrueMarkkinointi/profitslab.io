@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import PurchaseNotification from "@/components/PurchaseNotification";
 
 const STRIPE_URL = "https://buy.stripe.com/eVqdRa99xaaKdXgbUh6kg01";
 const AUDIT_URL = "/audit";
@@ -553,6 +554,9 @@ export default function Home() {
         </div>
         <p className="footer-copyright">© 2026 ProfitSlab. All rights reserved. · Powered by <a href="https://www.evenrue.fi/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-muted)", textDecoration: "none" }}>Evenrue</a></p>
       </footer>
+
+      {/* Purchase notification popup */}
+      <PurchaseNotification />
 
       {/* Sticky Mobile CTA */}
       {showStickyBar && (
