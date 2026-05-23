@@ -260,28 +260,53 @@ export default function Home() {
           <h2>80 prompts organized by business task</h2>
           <p>Use the stack to create better first drafts, clearer processes and faster replies — without learning prompt engineering.</p>
         </div>
-        <div className="categories">
+
+        {/* Featured 4 */}
+        <div className="categories-featured">
           {[
-            { name: "Sales & Outreach", icon: "phone", desc: "Cold emails, follow-ups, offer messages and sales replies." },
-            { name: "Marketing & Content", icon: "edit", desc: "Ad copy, campaign ideas, content plans and promotional angles." },
-            { name: "Customer Communication", icon: "message-circle", desc: "Support replies, complaint responses and FAQ-style answers." },
-            { name: "Operations & SOPs", icon: "monitor", desc: "Checklists, workflows, internal instructions and process documentation." },
-            { name: "Hiring & Team", icon: "users", desc: "Job posts, onboarding steps and team communication." },
-            { name: "Planning & Strategy", icon: "map", desc: "Idea prioritization, action plans and decision support." },
-            { name: "Finance & Admin", icon: "dollar-sign", desc: "Budget summaries, invoice copy and admin templates." },
-            { name: "Product & E-commerce", icon: "shopping-cart", desc: "Product descriptions, launch copy and offer framing." },
-            { name: "Email Marketing", icon: "mail", desc: "Sequences, subject lines, re-engagement and nurture emails." },
-            { name: "Social Media", icon: "instagram", desc: "Captions, hooks, content calendars and post ideas." },
+            {
+              name: "Sales & Outreach",
+              icon: "phone",
+              desc: "Cold emails, follow-ups, offer messages and sales replies.",
+              preview: "Write a cold email to [prospect] at [company]. Under 120 words. End with a soft question, not a meeting request.",
+            },
+            {
+              name: "Marketing & Content",
+              icon: "edit",
+              desc: "Ad copy, campaign ideas, content plans and promotional angles.",
+              preview: "Write 3 ad hooks for [product] targeting [audience] who worry about [pain point]. Each under 10 words.",
+            },
+            {
+              name: "Customer Communication",
+              icon: "message-circle",
+              desc: "Support replies, complaint responses and FAQ-style answers.",
+              preview: "Respond to [complaint] — acknowledge, explain, offer [solution]. Keep it under 150 words.",
+            },
+            {
+              name: "Hiring & Team",
+              icon: "users",
+              desc: "Job posts, onboarding steps and team communication.",
+              preview: "Write a job description for [role] at a [company type]. Professional but not corporate. No buzzwords.",
+            },
           ].map((cat) => (
-            <div key={cat.name} className="category">
-              <div className="category-icon">
-                <CategoryIcon name={cat.icon} />
+            <div key={cat.name} className="category-featured">
+              <div className="category-featured-top">
+                <div className="category-icon">
+                  <CategoryIcon name={cat.icon} />
+                </div>
+                <div className="category-name">{cat.name}</div>
+                <div className="category-featured-desc">{cat.desc}</div>
               </div>
-              <div className="category-name">{cat.name}</div>
-              <div className="category-count" style={{ fontSize: "0.8rem", color: "var(--text-muted)", marginTop: "0.25rem", lineHeight: 1.4 }}>{cat.desc}</div>
+              <div className="category-featured-preview">
+                <span className="category-preview-label">Example prompt</span>
+                <span className="category-preview-text">{cat.preview}</span>
+              </div>
             </div>
           ))}
         </div>
+
+        {/* Remaining 6 — expandable */}
+        <CategoriesExpand />
       </section>
 
       {/* How it works — replaced with before/after job description */}
@@ -542,6 +567,36 @@ export default function Home() {
         </div>
       )}
     </>
+  );
+}
+
+function CategoriesExpand() {
+  const [open, setOpen] = useState(false);
+  const rest = [
+    { name: "Operations & SOPs", icon: "monitor", desc: "Checklists, workflows, internal instructions and process documentation." },
+    { name: "Planning & Strategy", icon: "map", desc: "Idea prioritization, action plans and decision support." },
+    { name: "Finance & Admin", icon: "dollar-sign", desc: "Budget summaries, invoice copy and admin templates." },
+    { name: "Product & E-commerce", icon: "shopping-cart", desc: "Product descriptions, launch copy and offer framing." },
+    { name: "Email Marketing", icon: "mail", desc: "Sequences, subject lines, re-engagement and nurture emails." },
+    { name: "Social Media", icon: "instagram", desc: "Captions, hooks, content calendars and post ideas." },
+  ];
+  return (
+    <div className="categories-expand">
+      {open && (
+        <div className="categories categories-rest">
+          {rest.map((cat) => (
+            <div key={cat.name} className="category">
+              <div className="category-icon"><CategoryIcon name={cat.icon} /></div>
+              <div className="category-name">{cat.name}</div>
+              <div className="category-count" style={{ fontSize: "0.8rem", color: "var(--text-muted)", marginTop: "0.25rem", lineHeight: 1.4 }}>{cat.desc}</div>
+            </div>
+          ))}
+        </div>
+      )}
+      <button className="categories-toggle" onClick={() => setOpen((v) => !v)}>
+        {open ? "Hide categories ↑" : "See all 10 categories →"}
+      </button>
+    </div>
   );
 }
 
