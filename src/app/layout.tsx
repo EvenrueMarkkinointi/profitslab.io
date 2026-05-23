@@ -4,20 +4,20 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.profitslab.io"),
   title: {
-    default: "AI Shortcut Stack — 80 Copy-Paste AI Prompts for Business | ProfitSlab",
+    default: "Practical AI for Small Businesses | ProfitSlab",
     template: "%s | ProfitSlab",
   },
   description:
-    "Stop guessing what to ask AI. 80 ready-to-use prompts for sales, marketing, ops, hiring and more. $19 one-time. Works with ChatGPT, Claude, Gemini.",
+    "Step-by-step AI guides, a free business audit, and ready-to-use prompts for small business owners. No fluff, no jargon — just practical AI that saves time.",
   authors: [{ name: "ProfitSlab by Evenrue" }],
   referrer: "strict-origin-when-cross-origin",
   alternates: {
     canonical: "https://www.profitslab.io/",
   },
   openGraph: {
-    title: "AI Shortcut Stack — 80 Copy-Paste AI Prompts for Business",
+    title: "Practical AI for Small Businesses | ProfitSlab",
     description:
-      "Stop guessing what to ask AI. 80 ready-to-use prompts for sales, marketing, ops, hiring and more. $19 one-time. Works with ChatGPT, Claude, Gemini.",
+      "Step-by-step AI guides, a free business audit, and ready-to-use prompts for small business owners. No fluff, no jargon.",
     url: "https://www.profitslab.io/",
     siteName: "ProfitSlab",
     images: [{ url: "https://www.profitslab.io/images/og-image.png", width: 1200, height: 630 }],
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Shortcut Stack — 80 Prompts, $19, Instant Access",
-    description: "Stop writing prompts from scratch. 80 copy-paste prompts for real business tasks.",
+    title: "Practical AI for Small Businesses | ProfitSlab",
+    description: "Free AI audit, step-by-step guides, and copy-paste prompts for business owners. No jargon.",
     images: ["https://www.profitslab.io/images/og-image.png"],
   },
   icons: {
