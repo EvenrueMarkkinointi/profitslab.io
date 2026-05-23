@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
 const STRIPE_URL = "https://buy.stripe.com/eVqdRa99xaaKdXgbUh6kg01";
@@ -9,7 +9,7 @@ const AUDIT_URL = "/audit";
 const faqs = [
   {
     q: "Can't I just find AI prompts for free online?",
-    a: "You can — and you'll spend hours sorting through Reddit threads, Twitter posts, and blog listicles to find ones that actually work for business. This stack is organized by job, tested on real tasks, and ready to use in 2 minutes. That's what the $19 buys you.",
+    a: "Absolutely. And you'll spend a full afternoon on Reddit and Twitter curating them, testing which ones actually work, and organizing them into something usable. Or you spend $19 and start using them in 2 minutes. The stack isn't about prompts existing — it's about not having to think about them ever again.",
   },
   {
     q: "Can I use this with the free version of ChatGPT?",
@@ -37,8 +37,44 @@ const faqs = [
   },
 ];
 
+const workflowChains = [
+  {
+    title: "The Cold Outreach Machine",
+    steps: ["Persona Builder", "Cold Email Writer", "Follow-up Sequence", "LinkedIn Connect"],
+  },
+  {
+    title: "The One-Afternoon Marketing Launch",
+    steps: ["Landing Page", "Ad Copy", "Google Ads", "Email Sequence"],
+  },
+  {
+    title: "The Hiring Pipeline",
+    steps: ["Job Post", "Interview Prep", "Rejection Templates", "Offer Letter", "Onboarding"],
+  },
+  {
+    title: "The Customer Recovery Playbook",
+    steps: ["Complaint Response", "Refund Reply", "Review Response"],
+  },
+  {
+    title: "The Content Multiplier",
+    steps: ["Blog Outline", "Social Repurpose", "Email Subject Lines", "Video Script"],
+  },
+];
+
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [showStickyBar, setShowStickyBar] = useState(true);
+  const pricingRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = pricingRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setShowStickyBar(!entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
@@ -54,7 +90,7 @@ export default function Home() {
             AI Shortcut Stack
             <span>by profitslab.io</span>
           </a>
-          <a href={STRIPE_URL} className="btn-primary">Get the Shortcut Stack — $19</a>
+          <a href={STRIPE_URL} className="btn-primary nav-cta-desktop">Get Instant Access — $19</a>
         </div>
       </nav>
 
@@ -62,26 +98,26 @@ export default function Home() {
       <section className="hero">
         <div className="hero-grid">
           <div>
+            <div className="freshness-badge">
+              <span>✓</span> Updated May 2026 — tested with GPT-4o, Claude 4, and Gemini 2.5
+            </div>
             <h1>
               Stop guessing what to ask AI.
             </h1>
             <p className="hero-subtitle">
-              Use 80 ready-to-use prompts to write emails, replies, SOPs, ads and plans faster — without starting from a blank prompt every time.
+              80 copy-paste prompts that replace hours of writing, planning and admin. No prompt engineering required.
             </p>
             <div className="hero-cta">
               <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                 <a href={STRIPE_URL} className="btn-primary btn-large">
-                  Get Instant Access
+                  Get Instant Access — $19
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
                   </svg>
                 </a>
-                <span style={{ fontSize: "0.8125rem", color: "var(--text-muted)", textAlign: "center" }}>$19 one-time payment · Instant download · 14-day guarantee</span>
+                <span style={{ fontSize: "0.8125rem", color: "var(--text-muted)", textAlign: "center" }}>One-time payment · Instant download · 14-day guarantee</span>
               </div>
-              <Link href={AUDIT_URL} style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", color: "var(--text-secondary)", fontSize: "0.9375rem", textDecoration: "none", fontWeight: 500 }}>
-                Take the Free AI Audit First →
-              </Link>
             </div>
             <div className="hero-trust">
               {["Instant access", "PDF + Notion version", "Works with ChatGPT, Claude and Gemini", "14-day refund guarantee"].map((item) => (
@@ -94,9 +130,60 @@ export default function Home() {
               ))}
             </div>
           </div>
-          <div className="hero-image">
-            <img src="/images/product_mockup.jpg" alt="AI Shortcut Stack on laptop and tablet" />
+          <div className="hero-prompt-preview">
+            <div className="hero-prompt-card">
+              <div className="hpc-header">
+                <div className="hpc-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <span className="hpc-title">COLD EMAIL PROMPT</span>
+              </div>
+              <div className="hpc-body">
+                <p className="hpc-text">
+                  Write a cold email to <span className="placeholder">[prospect name]</span> at <span className="placeholder">[company]</span>.<br />
+                  They are <span className="placeholder">[job title]</span> and their main challenge is <span className="placeholder">[pain point]</span>.<br />
+                  Our solution <span className="placeholder">[how you solve it]</span>.<br />
+                  Under 120 words. End with a soft question, not a meeting request.
+                </p>
+              </div>
+              <div className="hpc-meta">
+                <div className="hpc-meta-item">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Best for: ChatGPT-4, Claude
+                </div>
+                <div className="hpc-meta-item">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Category: Sales &amp; Outreach
+                </div>
+                <div className="hpc-meta-item">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  Time saved: ~15 min per email
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* Social Proof */}
+      <section className="social-proof-section">
+        <div className="social-proof-bar">
+          <span className="social-proof-stars">★★★★★</span>
+          <span className="social-proof-text">Used by 2,379+ founders and operators</span>
+        </div>
+        <div className="testimonials-grid">
+          <figure className="testimonial-card">
+            <blockquote>&ldquo;Saved me 3 hours this week on client emails alone.&rdquo;</blockquote>
+            <figcaption>— James R., Agency Owner</figcaption>
+          </figure>
+          <figure className="testimonial-card">
+            <blockquote>&ldquo;I stopped writing prompts from scratch. This is my Monday morning shortcut.&rdquo;</blockquote>
+            <figcaption>— Lisa K., Freelance Marketer</figcaption>
+          </figure>
+          <figure className="testimonial-card">
+            <blockquote>&ldquo;Finally, prompts that actually work for B2B. Worth 10x the price.&rdquo;</blockquote>
+            <figcaption>— Mark S., SaaS Founder</figcaption>
+          </figure>
         </div>
       </section>
 
@@ -108,7 +195,7 @@ export default function Home() {
             Most people open ChatGPT with a vague idea, write a weak prompt, get an average answer and give up. The problem isn&apos;t the AI. The problem is starting from scratch every time.
           </p>
           <p style={{ maxWidth: 620, margin: "1rem auto 0", color: "var(--text-secondary)" }}>
-            The AI Shortcut Stack gives you proven starting points for the business tasks you already do every week.
+            These are the exact prompts I use so I don&apos;t have to start from a blank page every Monday morning. I got tired of re-inventing the wheel — so I turned my best prompts into a system.
           </p>
         </div>
       </section>
@@ -166,27 +253,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* How it works */}
+      {/* How it works — replaced with before/after job description */}
       <section className="section">
         <div className="section-header">
           <h2>Turn repetitive business tasks into reusable AI workflows.</h2>
-          <p>Four steps. No learning curve.</p>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1.5rem", maxWidth: 900, margin: "0 auto" }}>
-          {[
-            { step: 1, title: "Choose the task", desc: "Find the prompt that matches what you're trying to do." },
-            { step: 2, title: "Copy and customize", desc: "Fill in the blanks with your business, offer, audience or goal." },
-            { step: 3, title: "Paste into your AI tool", desc: "Use it with ChatGPT, Claude, Gemini or your preferred AI assistant." },
-            { step: 4, title: "Reuse it as a workflow", desc: "Save your best prompts and use them every time the task comes up again." },
-          ].map((item) => (
-            <div key={item.step} style={{ background: "var(--bg-card)", border: "1px solid var(--border)", borderRadius: 12, padding: "1.5rem" }}>
-              <div style={{ width: 36, height: 36, background: "var(--accent)", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 800, fontSize: "0.875rem", color: "white", marginBottom: "1rem" }}>
-                {item.step}
-              </div>
-              <div style={{ fontWeight: 700, marginBottom: "0.5rem" }}>{item.title}</div>
-              <div style={{ fontSize: "0.9rem", color: "var(--text-secondary)", lineHeight: 1.6 }}>{item.desc}</div>
+        <div className="jd-before-after">
+          <div className="jd-col jd-before">
+            <div className="jd-label jd-label-before">Before (without the stack)</div>
+            <div className="jd-content">
+              <div className="jd-line"><span className="jd-speaker">You:</span> &ldquo;Write me a job description&rdquo;</div>
+              <div className="jd-line"><span className="jd-speaker">AI:</span> Generic 500-word JD that sounds like every other company.</div>
+              <div className="jd-line jd-time">Time spent fixing it: <strong>45 minutes.</strong></div>
             </div>
-          ))}
+          </div>
+          <div className="jd-col jd-after">
+            <div className="jd-label jd-label-after">After (with the stack)</div>
+            <div className="jd-content">
+              <div className="jd-line"><span className="jd-speaker">You:</span> [paste the JD prompt with filled-in blanks]</div>
+              <div className="jd-line"><span className="jd-speaker">AI:</span> Role-specific, tone-matched, ready to post.</div>
+              <div className="jd-line jd-time">Time spent: <strong>2 minutes.</strong></div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -239,23 +327,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Workflow Preview */}
+      {/* Workflow Preview — visual flow diagrams */}
       <section className="workflow-section">
         <div className="section-header">
           <h2>Prompts are tools. Chains are systems.</h2>
           <p>The bonus Prompt Chain Workflows guide shows you how to connect prompts into complete business processes:</p>
         </div>
-        <div className="workflow-list">
-          {[
-            { title: "The Cold Outreach Machine", desc: "Persona → cold email → follow-up → LinkedIn connect" },
-            { title: "The One-Afternoon Marketing Launch", desc: "Landing page → ads → Google Ads → email sequence" },
-            { title: "The Hiring Pipeline", desc: "Job post → interview prep → rejection templates → offer letter → onboarding" },
-            { title: "The Customer Recovery Playbook", desc: "Complaint response → refund → review reply" },
-            { title: "The Content Multiplier", desc: "Blog outline → repurpose for social → email subject lines → video script" },
-          ].map((wf) => (
-            <div key={wf.title} className="workflow-item">
-              <h4>{wf.title}</h4>
-              <p>{wf.desc}</p>
+        <div className="workflow-chains">
+          {workflowChains.map((chain) => (
+            <div key={chain.title} className="workflow-chain">
+              <h4 className="chain-title">{chain.title}</h4>
+              <div className="chain-steps">
+                {chain.steps.map((step, i) => (
+                  <div key={step} className="chain-step-wrapper">
+                    <div className="chain-step">{step}</div>
+                    {i < chain.steps.length - 1 && (
+                      <div className="chain-arrow" aria-hidden="true">→</div>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>
@@ -293,7 +384,7 @@ export default function Home() {
       </section>
 
       {/* Pricing */}
-      <section className="cta-section" id="buy">
+      <section className="cta-section" id="buy" ref={pricingRef as React.RefObject<HTMLElement>}>
         <div className="cta-box">
           <h2>Get the complete AI Shortcut Stack</h2>
           <p>Everything you need to start getting better output from AI today.</p>
@@ -317,16 +408,23 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <div className="cta-price">
-            $19 <span style={{ fontSize: "1.25rem", fontWeight: 400, color: "var(--text-muted)" }}>one-time payment</span>
+          <div className="cta-price-block">
+            <span className="price-strikethrough">$49</span>
+            <span className="price-main">$19</span>
+            <span className="price-label">one-time payment</span>
           </div>
-          <a href={STRIPE_URL} className="btn-primary btn-large" style={{ width: "100%", justifyContent: "center" }}>
-            Get Instant Access
+          <div className="launch-badge">Launch price — 60% OFF</div>
+          <a href={STRIPE_URL} className="btn-primary btn-large" style={{ width: "100%", justifyContent: "center", marginTop: "1.25rem" }}>
+            Get Instant Access — $19
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </a>
+          <div className="stripe-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            Secure checkout · Powered by Stripe
+          </div>
           <div className="guarantee">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
@@ -350,6 +448,13 @@ export default function Home() {
           </svg>
         </a>
       </section>
+
+      {/* AI Audit link — above FAQ */}
+      <div className="audit-pre-faq">
+        <Link href={AUDIT_URL} className="audit-pre-faq-link">
+          Not sure yet? Take the free AI Audit first →
+        </Link>
+      </div>
 
       {/* FAQ */}
       <section className="faq-section">
@@ -398,6 +503,15 @@ export default function Home() {
         </div>
         <p className="footer-copyright">© 2026 ProfitSlab. All rights reserved. · Powered by <a href="https://www.evenrue.fi/" target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-muted)", textDecoration: "none" }}>Evenrue</a></p>
       </footer>
+
+      {/* Sticky Mobile CTA */}
+      {showStickyBar && (
+        <div className="sticky-mobile-cta" aria-label="Quick purchase">
+          <a href={STRIPE_URL} className="btn-primary sticky-mobile-btn">
+            $19 — Get Instant Access
+          </a>
+        </div>
+      )}
     </>
   );
 }
