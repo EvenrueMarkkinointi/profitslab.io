@@ -463,7 +463,7 @@ export default function Home() {
             <span className="price-main">$19</span>
             <span className="price-label">one-time payment</span>
           </div>
-          <div className="launch-badge">Launch price — 60% OFF</div>
+          <div className="launch-badge">Launch price — 84% OFF</div>
           <a href={STRIPE_URL} className="btn-primary btn-large" style={{ width: "100%", justifyContent: "center", marginTop: "1.25rem" }}>
             Get Instant Access — $19
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
