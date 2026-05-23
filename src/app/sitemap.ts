@@ -9,6 +9,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: "https://www.profitslab.io/products/",
+      lastModified: new Date("2026-05-23"),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: "https://www.profitslab.io/products/prompt-stack/",
+      lastModified: new Date("2026-05-23"),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: "https://www.profitslab.io/guides/",
+      lastModified: new Date("2026-05-23"),
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
       url: "https://www.profitslab.io/audit",
       lastModified: new Date("2026-05-23"),
       changeFrequency: "monthly",
