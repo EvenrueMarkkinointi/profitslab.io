@@ -23,6 +23,13 @@ const upcomingGuides = [
     status: "live",
   },
   {
+    tag: "Strategy",
+    title: "Best AI Tools for Small Business in 2026",
+    desc: "20+ AI tools tested and ranked by real business function. $50/month maximum stack.",
+    href: "/guides/best-ai-tools-small-business",
+    status: "live",
+  },
+  {
     tag: "Sales",
     title: "Cold emails that get replies: 3 AI prompts that sound like you",
     desc: "Stop writing from scratch. Fill in the blanks, paste, send.",
