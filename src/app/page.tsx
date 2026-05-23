@@ -107,6 +107,27 @@ export default function Home() {
             <p className="hero-subtitle">
               80 copy-paste prompts that replace hours of writing, planning and admin. No prompt engineering required.
             </p>
+            <div className="hero-bonuses">
+              {[
+                { label: "80 copy-paste AI prompts (PDF)", value: "$49" },
+                { label: "Quick Start Cheat Sheet (bonus)", value: "$19" },
+                { label: "Prompt Chain Workflows guide (bonus)", value: "$29" },
+              ].map((item) => (
+                <div key={item.label} className="hero-bonus-row">
+                  <span className="hero-bonus-check">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </span>
+                  <span className="hero-bonus-label">{item.label}</span>
+                  <span className="hero-bonus-value">{item.value}</span>
+                </div>
+              ))}
+              <div className="hero-bonus-total">
+                <span>Total value</span>
+                <span className="hero-bonus-total-strike">$97</span>
+              </div>
+            </div>
             <div className="hero-cta">
               <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                 <a href={STRIPE_URL} className="btn-primary btn-large">
@@ -116,11 +137,15 @@ export default function Home() {
                     <polyline points="12 5 19 12 12 19"></polyline>
                   </svg>
                 </a>
-                <span style={{ fontSize: "0.8125rem", color: "var(--text-muted)", textAlign: "center" }}>One-time payment · Instant download · 14-day guarantee</span>
+                <div className="hero-price-line">
+                  <span className="hero-price-strike">$49</span>
+                  <span className="hero-price-now">$19</span>
+                  <span className="hero-price-note">launch price · one-time payment</span>
+                </div>
               </div>
             </div>
             <div className="hero-trust">
-              {["Instant access", "PDF format", "Works with ChatGPT, Claude and Gemini", "14-day refund guarantee"].map((item) => (
+              {["Instant access", "14-day refund guarantee", "Works with ChatGPT, Claude and Gemini"].map((item) => (
                 <div key={item} className="trust-item">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <polyline points="20 6 9 17 4 12"></polyline>

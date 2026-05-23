@@ -886,6 +886,92 @@ body {
   flex-shrink: 0;
 }
 
+/* Hero bonus list */
+.hero-bonuses {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.875rem 1rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hero-bonus-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.hero-bonus-check {
+  flex-shrink: 0;
+  color: var(--success);
+}
+
+.hero-bonus-check svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+.hero-bonus-label {
+  flex: 1;
+  color: var(--text-secondary);
+}
+
+.hero-bonus-value {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  text-decoration: line-through;
+  white-space: nowrap;
+}
+
+.hero-bonus-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+  margin-top: 0.25rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.hero-bonus-total-strike {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+/* Hero price line (strikethrough comparison) */
+.hero-price-line {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-price-strike {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-decoration: line-through;
+}
+
+.hero-price-now {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.hero-price-note {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
 /* Social proof section */
 .social-proof-section {
   padding: 2rem 1.5rem 3rem;
