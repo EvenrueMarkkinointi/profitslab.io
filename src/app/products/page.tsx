@@ -61,6 +61,31 @@ export default function Products() {
               </div>
             </div>
 
+            <div className="product-catalog-card">
+              <div className="product-catalog-top">
+                <span className="product-catalog-tag">MCP Server · Free</span>
+                <h2 className="product-catalog-name">Connector.wtf</h2>
+                <p className="product-catalog-desc">
+                  Ask ChatGPT or Claude about your Google, Meta + LinkedIn Ads. A read-only MCP server that audits accounts, finds wasted spend, and compares periods — without touching a single bid.
+                </p>
+                <div className="product-catalog-tags">
+                  <span>Google Ads</span>
+                  <span>Meta Ads</span>
+                  <span>LinkedIn Ads</span>
+                  <span>ChatGPT</span>
+                  <span>Claude</span>
+                </div>
+              </div>
+              <div className="product-catalog-bottom">
+                <div className="product-catalog-price">
+                  <span className="product-price-main" style={{ color: "var(--success)" }}>Free</span>
+                </div>
+                <Link href="/products/connector-wtf" className="btn-primary">
+                  View Product →
+                </Link>
+              </div>
+            </div>
+
             {/* Placeholder for future products */}
             <div className="product-catalog-card product-catalog-coming-soon">
               <div className="product-catalog-top">
