@@ -203,15 +203,15 @@ export default function Home() {
         </div>
         <div className="testimonials-grid">
           <figure className="testimonial-card">
-            <blockquote>&ldquo;Saved me 3 hours this week on client emails alone.&rdquo;</blockquote>
+            <blockquote>&ldquo;Saved me 3 hours this week on client emails alone. I used to stare at a blank screen for 20 minutes per email.&rdquo;</blockquote>
             <figcaption>— James R., Agency Owner</figcaption>
           </figure>
           <figure className="testimonial-card">
-            <blockquote>&ldquo;I stopped writing prompts from scratch. This is my Monday morning shortcut.&rdquo;</blockquote>
+            <blockquote>&ldquo;Wrote a job ad in 4 minutes that got 12 qualified applicants. Usually takes me an hour and it still sounds generic.&rdquo;</blockquote>
             <figcaption>— Lisa K., Freelance Marketer</figcaption>
           </figure>
           <figure className="testimonial-card">
-            <blockquote>&ldquo;Finally, prompts that actually work for B2B. Worth 10x the price.&rdquo;</blockquote>
+            <blockquote>&ldquo;The customer complaint prompt de-escalated an angry client in one reply. I didn&apos;t have to think — just filled in the blanks.&rdquo;</blockquote>
             <figcaption>— Mark S., SaaS Founder</figcaption>
           </figure>
         </div>
