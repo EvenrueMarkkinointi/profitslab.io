@@ -63,6 +63,32 @@ export default function Products() {
 
             <div className="product-catalog-card">
               <div className="product-catalog-top">
+                <span className="product-catalog-tag">PDF · AI Skill</span>
+                <h2 className="product-catalog-name">AI Sales Sequence Pack + Skill</h2>
+                <p className="product-catalog-desc">
+                  Turn your offer and target customer into cold emails, follow-ups, LinkedIn messages, and objection replies in minutes. Templates + a companion AI Skill that builds sequences from your inputs.
+                </p>
+                <div className="product-catalog-tags">
+                  <span>ChatGPT</span>
+                  <span>Claude</span>
+                  <span>Sales</span>
+                  <span>PDF</span>
+                </div>
+              </div>
+              <div className="product-catalog-bottom">
+                <div className="product-catalog-price">
+                  <span className="product-price-strike">$146</span>
+                  <span className="product-price-main">$29</span>
+                  <span className="product-price-note">one-time</span>
+                </div>
+                <Link href="/products/ai-sales-sequence-pack" className="btn-primary">
+                  View Product →
+                </Link>
+              </div>
+            </div>
+
+            <div className="product-catalog-card">
+              <div className="product-catalog-top">
                 <span className="product-catalog-tag">MCP Server · Free</span>
                 <h2 className="product-catalog-name">Connector.wtf</h2>
                 <p className="product-catalog-desc">
