@@ -2935,6 +2935,13 @@ body {
   border-top: 1px solid var(--border);
 }
 
+/* Static FAQ in articles — answers always visible (no accordion toggle) */
+.article-faq .faq-answer {
+  max-height: none;
+  overflow: visible;
+  transition: none;
+}
+
 /* Bottom CTA */
 .article-bottom-cta {
   background: var(--bg-card);
