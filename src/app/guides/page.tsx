@@ -45,14 +45,22 @@ const upcomingGuides = [
   },
   {
     tag: "Marketing",
-    title: "Social media content in 30 minutes: an AI workflow for busy founders",
-    desc: "One session. A week of posts. No content calendar required.",
-    status: "soon",
+    title: "AI Prompts for Social Media: One Session, a Week of Posts",
+    desc: "40+ prompts for LinkedIn, Twitter, Instagram, and Facebook. Create a week of content in 30 minutes.",
+    href: "/guides/ai-prompts-for-social-media",
+    status: "live",
   },
   {
     tag: "Strategy",
     title: "Use AI to analyse your business data (even if you hate spreadsheets)",
     desc: "Turn raw numbers into clear decisions — no data skills needed.",
+    status: "soon",
+  },
+  {
+    tag: "Tech",
+    title: "MCP Server Setup: Connect AI to Your Business Tools",
+    desc: "Step-by-step guide to setting up Model Context Protocol servers. Connect ChatGPT to your CRM, database, and APIs.",
+    href: "/guides/mcp-server-setup",
     status: "soon",
   },
 ];

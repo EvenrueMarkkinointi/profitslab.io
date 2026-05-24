@@ -57,6 +57,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://www.profitslab.io/guides/ai-prompts-for-social-media/",
+      lastModified: new Date("2026-05-24"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://www.profitslab.io/guides/mcp-server-setup/",
+      lastModified: new Date("2026-05-24"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: "https://www.profitslab.io/audit",
       lastModified: new Date("2026-05-23"),
       changeFrequency: "monthly",
