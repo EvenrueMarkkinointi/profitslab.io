@@ -45,6 +45,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://www.profitslab.io/guides/how-to-use-chatgpt-for-business/",
+      lastModified: new Date("2026-05-24"),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: "https://www.profitslab.io/guides/ai-prompts-for-sales/",
+      lastModified: new Date("2026-05-24"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://www.profitslab.io/audit",
       lastModified: new Date("2026-05-23"),
       changeFrequency: "monthly",
