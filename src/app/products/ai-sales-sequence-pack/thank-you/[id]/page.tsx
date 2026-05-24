@@ -89,7 +89,7 @@ export default async function ThankYou({
 
         {/* Primary download — the Pack */}
         <a
-          href="#"
+          href="https://assets.cdn.filesafe.space/E9rYgzhbe1y43YCeeBfl/media/6a12b266b3e0c02fe7db029c.pdf"
           download
           style={{
             display: "inline-flex",
@@ -150,7 +150,7 @@ export default async function ThankYou({
                 <div className="bonus-tag">TXT — paste into Claude or ChatGPT as a custom system prompt</div>
               </div>
             </div>
-            <a href="#" download className="bonus-dl">
+            <a href="https://assets.cdn.filesafe.space/E9rYgzhbe1y43YCeeBfl/media/6a12b2c8e05851175c62a925.zip" download className="bonus-dl">
               <DownloadIcon size={14} />
               Download
             </a>
@@ -166,7 +166,7 @@ export default async function ThankYou({
                 <div className="bonus-tag">PDF — how to fill in the Skill and what goes in each field</div>
               </div>
             </div>
-            <a href="#" download className="bonus-dl">
+            <a href="https://assets.cdn.filesafe.space/E9rYgzhbe1y43YCeeBfl/media/6a12b266b3e0c02fe7db029d.pdf" download className="bonus-dl">
               <DownloadIcon size={14} />
               Download
             </a>
@@ -182,7 +182,7 @@ export default async function ThankYou({
                 <div className="bonus-tag">PDF — 5 worked examples showing exact inputs and the messages they produce</div>
               </div>
             </div>
-            <a href="#" download className="bonus-dl">
+            <a href="https://assets.cdn.filesafe.space/E9rYgzhbe1y43YCeeBfl/media/6a12b2666cc0eead5cbef791.pdf" download className="bonus-dl">
               <DownloadIcon size={14} />
               Download
             </a>
