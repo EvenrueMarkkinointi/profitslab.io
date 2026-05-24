@@ -21,6 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: "https://www.profitslab.io/products/ai-sales-sequence-pack/",
+      lastModified: new Date("2026-05-24"),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: "https://www.profitslab.io/products/connector-wtf/",
       lastModified: new Date("2026-05-23"),
       changeFrequency: "monthly",
