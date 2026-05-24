@@ -6,7 +6,7 @@ import SiteNav from "@/components/SiteNav";
 import PurchaseNotification from "@/components/PurchaseNotification";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
 
-const STRIPE_URL = "https://buy.stripe.com/REPLACE_ME";
+const STRIPE_URL = "https://buy.stripe.com/4gM3cw4ThciS5qK7E16kg02";
 
 const faqs = [
   {
