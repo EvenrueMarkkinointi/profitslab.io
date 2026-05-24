@@ -52,6 +52,13 @@ const upcomingGuides = [
   },
   {
     tag: "Comparison",
+    title: "ChatGPT vs Jasper for Small Business: Which AI Writer Wins?",
+    desc: "Honest comparison for blog posts, ads, emails, and social content. Side-by-side output tests and pricing breakdown.",
+    href: "/guides/chatgpt-vs-jasper-small-business",
+    status: "live",
+  },
+  {
+    tag: "Comparison",
     title: "AI Tools vs Virtual Assistant: What is Better?",
     desc: "Honest cost and capability breakdown. See when AI replaces a VA, when you still need a human, and how to combine both.",
     href: "/guides/ai-tools-vs-virtual-assistant",
