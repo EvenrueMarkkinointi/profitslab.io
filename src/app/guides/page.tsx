@@ -51,6 +51,13 @@ const upcomingGuides = [
     status: "live",
   },
   {
+    tag: "Comparison",
+    title: "ChatGPT vs Claude for Business: Which AI Wins?",
+    desc: "Side-by-side comparison for sales, marketing, customer service, and data analysis. Honest verdict.",
+    href: "/guides/chatgpt-vs-claude-business",
+    status: "live",
+  },
+  {
     tag: "Strategy",
     title: "Use AI to analyse your business data (even if you hate spreadsheets)",
     desc: "Turn raw numbers into clear decisions — no data skills needed.",
