@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProfitSlab — Redesign Mockup v2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Design Brief ────────────────────────────────────────────────────────
+       Palette    : near-black #0a0a0a + warm card #161616 + warm-muted #1e1e1e
+       Accent     : #10b981 (emerald — profit/money signal, distinct from generic blue)
+       Accent2    : #f59e0b (amber — urgency / highlight / warmth)
+       Typography : DM Serif Display (display/editorial) + Inter (body/UI)
+       Layout     : Asymmetric split hero → bento grid → editorial guide strips
+       Mood       : Founder-direct, confident, warm-but-no-BS
+       Density    : Medium-tight — no vast empty space, content earns its room
+       Motion     : Subtle — hover lifts, glow pulses, no gyrating animations
+    ──────────────────────────────────────────────────────────────────────── */
+
+    :root {
+      --bg:          #0a0a0a;
+      --bg-card:     #161616;
+      --bg-raised:   #1e1e1e;
+      --bg-inset:    #111111;
+      --text:        #f2f2f0;
+      --text-2:      #a8a8a0;
+      --text-3:      #666660;
+      --border:      #262620;
+      --border-2:    #2e2e28;
+      --accent:      #10b981;
+      --accent-glow: rgba(16,185,129,0.18);
+      --accent-dim:  rgba(16,185,129,0.10);
+      --amber:       #f59e0b;
+      --amber-dim:   rgba(245,158,11,0.12);
+      --red-dim:     rgba(239,68,68,0.10);
+      --r:           10px;
+      --r-lg:        16px;
+      --r-xl:        22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ── UTILITY ── */
+    .serif { font-family: 'DM Serif Display', Georgia, serif; }
+    .accent { color: var(--accent); }
+    .amber  { color: var(--amber); }
+    .muted  { color: var(--text-2); }
+    .tag {
+      display: inline-flex; align-items: center; gap: 0.375rem;
+      font-size: 0.6875rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--accent);
+      background: var(--accent-dim); border: 1px solid rgba(16,185,129,0.2);
+      padding: 0.25rem 0.625rem; border-radius: 999px;
+    }
+    .tag-amber {
+      color: var(--amber);
+      background: var(--amber-dim); border-color: rgba(245,158,11,0.2);
+    }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.875rem 2rem;
+      background: rgba(10,10,10,0.88);
+      backdrop-filter: blur(16px) saturate(1.4);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.625rem;
+      font-weight: 800; font-size: 1rem; letter-spacing: -0.02em;
+      text-decoration: none; color: var(--text);
+    }
+    .nav-logo-icon {
+      width: 28px; height: 28px;
+      background: linear-gradient(135deg, var(--accent), #059669);
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nav-logo-icon svg { color: #fff; }
+    .nav-links {
+      display: flex; align-items: center; gap: 0.25rem;
+    }
+    .nav-links a {
+      color: var(--text-2); font-size: 0.875rem; font-weight: 500;
+      text-decoration: none; padding: 0.375rem 0.75rem;
+      border-radius: 7px; transition: color 0.15s, background 0.15s;
+    }
+    .nav-links a:hover { color: var(--text); background: var(--bg-raised); }
+    .nav-cta {
+      display: inline-flex; align-items: center; gap: 0.375rem;
+      background: var(--accent); color: #fff;
+      font-size: 0.8125rem; font-weight: 700;
+      padding: 0.5rem 1.125rem; border-radius: var(--r);
+      text-decoration: none; transition: filter 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      max-width: 1200px; margin: 0 auto;
+      padding: 6rem 2rem 5rem;
+    }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; padding: 4rem 1.5rem; }
+      .hero-right { order: -1; }
+    }
+
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.75rem; font-weight: 600; color: var(--text-3);
+      margin-bottom: 1.25rem;
+    }
+    .hero-eyebrow-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--accent);
+      animation: pulse-dot 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { box-shadow: 0 0 0 0 var(--accent-glow); }
+      50%      { box-shadow: 0 0 0 6px transparent; }
+    }
+
+    .hero h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 400; /* DM Serif is a display face, keep weight natural */
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 1.0625rem; color: var(--text-2);
+      line-height: 1.7; max-width: 480px;
+      margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+      display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;
+      margin-bottom: 2rem;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--accent); color: #fff;
+      font-weight: 700; font-size: 0.9375rem;
+      padding: 0.8125rem 1.625rem; border-radius: var(--r);
+      text-decoration: none; border: none; cursor: pointer;
+      transition: filter 0.2s, transform 0.2s;
+      box-shadow: 0 0 0 0 var(--accent-glow);
+    }
+    .btn-primary:hover {
+      filter: brightness(1.1);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px var(--accent-glow);
+    }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: transparent; color: var(--text);
+      font-weight: 600; font-size: 0.9375rem;
+      padding: 0.8125rem 1.5rem; border-radius: var(--r);
+      text-decoration: none; border: 1px solid var(--border-2); cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+    }
+    .btn-ghost:hover {
+      border-color: var(--text-2);
+      background: var(--bg-raised);
+      transform: translateY(-1px);
+    }
+
+    .hero-social {
+      display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
+    }
+    .hero-social-item {
+      display: flex; align-items: center; gap: 0.375rem;
+      font-size: 0.8125rem; color: var(--text-3); font-weight: 500;
+    }
+    .hero-social-item svg { color: var(--accent); flex-shrink: 0; }
+
+    /* ── HERO RIGHT — Social proof stack ── */
+    .hero-right { position: relative; }
+
+    .proof-stack {
+      display: flex; flex-direction: column; gap: 0.75rem;
+      position: relative;
+    }
+
+    /* Floating stat tiles */
+    .stat-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
+    }
+    .stat-tile {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 1.25rem 1.5rem;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .stat-tile:hover { border-color: var(--accent); transform: translateY(-3px); }
+    .stat-tile-num {
+      font-size: 2rem; font-weight: 900; letter-spacing: -0.03em;
+      line-height: 1; margin-bottom: 0.25rem;
+    }
+    .stat-tile-label { font-size: 0.75rem; color: var(--text-3); font-weight: 500; }
+
+    /* Testimonial card */
+    .hero-testimonial {
+      background: var(--bg-card);
+      border: 1px solid var(--border-2);
+      border-radius: var(--r-lg);
+      padding: 1.25rem 1.5rem;
+      transition: border-color 0.2s;
+    }
+    .hero-testimonial:hover { border-color: var(--border-2); }
+    .hero-testimonial blockquote {
+      font-size: 0.9375rem; color: var(--text-2); line-height: 1.65;
+      font-style: italic; margin-bottom: 0.875rem;
+    }
+    .hero-testimonial-author {
+      display: flex; align-items: center; gap: 0.625rem;
+    }
+    .avatar {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: linear-gradient(135deg, #2d2d2d, #3d3d3d);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; font-weight: 700; color: var(--text-2);
+      flex-shrink: 0;
+    }
+    .avatar-sm { width: 26px; height: 26px; font-size: 0.6875rem; }
+    .hero-testimonial-name { font-size: 0.8125rem; font-weight: 600; }
+    .hero-testimonial-role { font-size: 0.75rem; color: var(--text-3); }
+    .stars { color: var(--amber); font-size: 0.75rem; letter-spacing: 0.05em; }
+
+    /* Prompt preview card */
+    .prompt-card {
+      background: var(--bg-inset);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+    }
+    .prompt-card-bar {
+      background: var(--bg-raised);
+      border-bottom: 1px solid var(--border);
+      padding: 0.625rem 1rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .traffic-lights { display: flex; gap: 6px; }
+    .traffic-lights span {
+      width: 10px; height: 10px; border-radius: 50%;
+    }
+    .tl-r { background: #ef4444; }
+    .tl-y { background: var(--amber); }
+    .tl-g { background: var(--accent); }
+    .prompt-card-label {
+      font-size: 0.6875rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent);
+    }
+    .prompt-card-body { padding: 1.125rem 1.25rem; }
+    .prompt-text {
+      font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+      font-size: 0.8125rem; line-height: 1.8; color: var(--text-2);
+    }
+    .ph {
+      color: var(--accent);
+      background: var(--accent-dim);
+      border-radius: 4px; padding: 1px 5px;
+      font-weight: 700;
+    }
+    .prompt-card-footer {
+      background: var(--bg-raised);
+      border-top: 1px solid var(--border);
+      padding: 0.625rem 1.25rem;
+      display: flex; gap: 1rem;
+    }
+    .prompt-meta {
+      display: flex; align-items: center; gap: 0.375rem;
+      font-size: 0.6875rem; color: var(--accent); font-weight: 600;
+    }
+
+    /* ── LOGO BAR ── */
+    .logo-bar {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 2rem;
+      text-align: center;
+    }
+    .logo-bar-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      gap: 2.5rem; flex-wrap: wrap;
+    }
+    .logo-bar-label {
+      font-size: 0.6875rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--text-3);
+    }
+    .logo-bar-items {
+      display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+    }
+    .logo-item {
+      font-size: 0.8125rem; font-weight: 600; color: var(--text-3);
+      display: flex; align-items: center; gap: 0.375rem;
+    }
+    .logo-item svg { opacity: 0.5; }
+
+    /* ── SECTION ── */
+    .section {
+      max-width: 1200px; margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+    .section-header {
+      margin-bottom: 3rem;
+    }
+    .section-kicker {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--accent);
+      margin-bottom: 0.75rem; display: block;
+    }
+    .section-header h2 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 400; line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+    }
+    .section-header p {
+      font-size: 1.0625rem; color: var(--text-2);
+      max-width: 520px; line-height: 1.65;
+    }
+
+    /* ── BENTO GRID (3 ways) ── */
+    .bento {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      grid-template-rows: auto;
+      gap: 1rem;
+    }
+    @media (max-width: 900px) {
+      .bento { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 900px) {
+      .bento-primary { grid-row: span 2; }
+    }
+
+    .bento-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: 2rem;
+      display: flex; flex-direction: column; gap: 1rem;
+      transition: border-color 0.2s, transform 0.25s;
+      position: relative; overflow: hidden;
+    }
+    .bento-card:hover {
+      border-color: rgba(16,185,129,0.3);
+      transform: translateY(-3px);
+    }
+    .bento-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at top left, var(--accent-dim) 0%, transparent 60%);
+      opacity: 0; transition: opacity 0.3s;
+      pointer-events: none;
+    }
+    .bento-card:hover::before { opacity: 1; }
+
+    .bento-primary {
+      background: linear-gradient(145deg, #0f1f18 0%, var(--bg-card) 60%);
+      border-color: rgba(16,185,129,0.25);
+    }
+    .bento-primary::before {
+      background: radial-gradient(ellipse at top, var(--accent-glow) 0%, transparent 60%);
+      opacity: 0.6;
+    }
+
+    .bento-icon {
+      width: 48px; height: 48px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(16,185,129,0.2);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+    }
+    .bento-icon-amber {
+      background: var(--amber-dim);
+      border-color: rgba(245,158,11,0.2);
+    }
+
+    .bento-card h3 {
+      font-size: 1.125rem; font-weight: 800;
+      letter-spacing: -0.01em;
+    }
+    .bento-card p {
+      font-size: 0.875rem; color: var(--text-2); line-height: 1.6; flex: 1;
+    }
+    .bento-link {
+      display: inline-flex; align-items: center; gap: 0.375rem;
+      font-size: 0.875rem; font-weight: 700; color: var(--accent);
+      text-decoration: none;
+      transition: gap 0.15s;
+    }
+    .bento-link:hover { gap: 0.625rem; }
+
+    /* mini audit progress inside bento primary */
+    .mini-audit {
+      background: var(--bg-inset);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 1rem 1.125rem;
+      display: flex; flex-direction: column; gap: 0.625rem;
+    }
+    .mini-audit-row {
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .mini-audit-label {
+      font-size: 0.75rem; color: var(--text-2); min-width: 100px; font-weight: 500;
+    }
+    .mini-bar-outer {
+      flex: 1; height: 6px; background: var(--border); border-radius: 3px;
+    }
+    .mini-bar-inner {
+      height: 6px; border-radius: 3px;
+      background: linear-gradient(90deg, var(--accent), #059669);
+    }
+    .mini-bar-amber { background: linear-gradient(90deg, var(--amber), #d97706); }
+    .mini-audit-pct {
+      font-size: 0.75rem; font-weight: 700; min-width: 30px; text-align: right;
+    }
+
+    /* ── GUIDES STRIP ── */
+    .guides-strip { display: flex; flex-direction: column; gap: 0.625rem; }
+
+    .guide-row {
+      display: grid;
+      grid-template-columns: 60px 1fr auto;
+      align-items: center; gap: 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 1.125rem 1.5rem;
+      text-decoration: none; color: inherit;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .guide-row:hover {
+      border-color: rgba(16,185,129,0.3);
+      transform: translateX(4px);
+    }
+    .guide-num {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 2rem; color: var(--border-2);
+      font-weight: 400; line-height: 1; user-select: none;
+      transition: color 0.2s;
+    }
+    .guide-row:hover .guide-num { color: var(--accent); }
+    .guide-tag {
+      font-size: 0.6875rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--accent); margin-bottom: 0.25rem;
+    }
+    .guide-title {
+      font-size: 0.9375rem; font-weight: 700; line-height: 1.35;
+    }
+    .guide-arrow {
+      color: var(--text-3); font-size: 1.25rem;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .guide-row:hover .guide-arrow { color: var(--accent); transform: translateX(4px); }
+
+    /* ── PRODUCT TEASER ── */
+    .product-band {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .product-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 5rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+    }
+    @media (max-width: 800px) {
+      .product-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+    .product-kicker { color: var(--amber); margin-bottom: 1rem; }
+    .product-heading {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400; line-height: 1.1; margin-bottom: 1rem;
+    }
+    .product-desc {
+      font-size: 1rem; color: var(--text-2); line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .product-price-row {
+      display: flex; align-items: baseline; gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .price-old {
+      font-size: 1.125rem; color: var(--text-3);
+      text-decoration: line-through; font-weight: 600;
+    }
+    .price-new {
+      font-size: 2.25rem; font-weight: 900; letter-spacing: -0.03em;
+    }
+    .price-note { font-size: 0.875rem; color: var(--text-3); }
+
+    /* prompt showcase */
+    .product-prompts {
+      display: flex; flex-direction: column; gap: 0.625rem;
+    }
+    .mini-prompt {
+      background: var(--bg-inset);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 0.875rem 1.125rem;
+      display: flex; flex-direction: column; gap: 0.375rem;
+      transition: border-color 0.2s;
+    }
+    .mini-prompt:hover { border-color: rgba(16,185,129,0.25); }
+    .mini-prompt-cat {
+      font-size: 0.625rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; color: var(--accent);
+    }
+    .mini-prompt-text {
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.75rem; color: var(--text-2); line-height: 1.6;
+    }
+    .mini-prompt-text .ph { font-size: 0.6875rem; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-bg {
+      background: var(--bg-inset);
+      border-top: 1px solid var(--border);
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    @media (max-width: 900px) {
+      .testimonials-grid { grid-template-columns: 1fr; }
+    }
+    .tcard {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 1.5rem;
+      display: flex; flex-direction: column; gap: 0.875rem;
+    }
+    .tcard blockquote {
+      font-size: 0.9375rem; color: var(--text-2);
+      line-height: 1.65; flex: 1;
+      font-style: italic;
+    }
+    .tcard-author {
+      display: flex; align-items: center; gap: 0.625rem;
+    }
+    .tcard-name { font-size: 0.8125rem; font-weight: 700; }
+    .tcard-role { font-size: 0.75rem; color: var(--text-3); }
+
+    /* ── FOUNDER ── */
+    .founder-inner {
+      max-width: 780px; margin: 0 auto;
+      display: grid; grid-template-columns: auto 1fr; gap: 3rem;
+      align-items: start;
+    }
+    @media (max-width: 700px) {
+      .founder-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+    .founder-avatar {
+      width: 80px; height: 80px; border-radius: 20px;
+      background: linear-gradient(145deg, #1a2e22, #0f1f18);
+      border: 2px solid rgba(16,185,129,0.25);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem; flex-shrink: 0;
+    }
+    .founder-kicker { color: var(--accent); font-size: 0.75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.875rem; }
+    .founder-quote {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+      font-style: italic; line-height: 1.5;
+      color: var(--text); margin-bottom: 1rem;
+    }
+    .founder-attr { font-size: 0.875rem; color: var(--text-3); }
+    .founder-attr strong { color: var(--text-2); }
+
+    /* ── NEWSLETTER ── */
+    .newsletter-bg {
+      background: linear-gradient(135deg, #0a1a12 0%, #0a0a0a 100%);
+      border-top: 1px solid rgba(16,185,129,0.15);
+    }
+    .newsletter-inner {
+      max-width: 580px; margin: 0 auto; text-align: center;
+    }
+    .newsletter-inner h2 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(1.625rem, 3.5vw, 2.25rem);
+      font-weight: 400; line-height: 1.2; margin-bottom: 0.75rem;
+    }
+    .newsletter-inner > p {
+      font-size: 0.9375rem; color: var(--text-2); margin-bottom: 2rem;
+    }
+    .nl-form {
+      display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .nl-input {
+      flex: 1; min-width: 240px;
+      padding: 0.8125rem 1.125rem;
+      background: var(--bg-raised);
+      border: 1px solid var(--border-2);
+      border-radius: var(--r);
+      color: var(--text); font-size: 0.9375rem;
+      font-family: inherit; outline: none;
+      transition: border-color 0.2s;
+    }
+    .nl-input:focus { border-color: var(--accent); }
+    .nl-input::placeholder { color: var(--text-3); }
+    .nl-footnote { font-size: 0.8125rem; color: var(--text-3); }
+    .nl-footnote a { color: var(--accent); text-decoration: none; }
+
+    /* ── FOOTER ── */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 2rem 2rem 2.5rem;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1.5rem; flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .footer-logo {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-weight: 800; font-size: 0.875rem;
+      text-decoration: none; color: var(--text);
+    }
+    .footer-logo-icon {
+      width: 22px; height: 22px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(16,185,129,0.2);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-links a {
+      font-size: 0.8125rem; color: var(--text-3); text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-links a:hover { color: var(--text-2); }
+    .footer-copy {
+      max-width: 1200px; margin: 0 auto;
+      font-size: 0.75rem; color: var(--text-3);
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;
+    }
+    .footer-copy a { color: var(--text-3); text-decoration: none; }
+
+    /* ── MOCKUP BANNER ── */
+    .mockup-banner {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+      padding: 0.625rem 1.5rem;
+      background: var(--amber);
+      color: #0a0a0a;
+      text-align: center;
+      font-size: 0.8125rem; font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .mockup-banner a { color: #0a0a0a; }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ─────────────────────────────────────────────────────────── -->
+  <nav class="nav">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+          <polyline points="2 17 12 22 22 17"/>
+          <polyline points="2 12 12 17 22 12"/>
+        </svg>
+      </div>
+      ProfitSlab
+    </a>
+    <div class="nav-links">
+      <a href="#">Guides</a>
+      <a href="#">Products</a>
+      <a href="#">AI Audit</a>
+    </div>
+    <a href="#" class="nav-cta">
+      Free Audit
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+      </svg>
+    </a>
+  </nav>
+
+  <!-- ── HERO ─────────────────────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-dot"></div>
+        Updated May 2026 — GPT-4o, Claude 4, Gemini 2.5
+      </div>
+
+      <h1>
+        Practical AI for<br />
+        <em>small business.</em><br />
+        Zero fluff.
+      </h1>
+
+      <p class="hero-sub">
+        Step-by-step guides, copy-paste prompts, and a free audit that
+        shows exactly where AI saves you the most time — built for
+        operators, not enterprise consultants.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#" class="btn-primary">
+          Take the Free AI Audit
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+        <a href="#" class="btn-ghost">Browse Guides →</a>
+      </div>
+
+      <div class="hero-social">
+        <div class="hero-social-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          2,100+ founders &amp; operators
+        </div>
+        <div class="hero-social-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          5-min free audit, instant results
+        </div>
+        <div class="hero-social-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          No AI hype, just steps that work
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="proof-stack">
+
+        <!-- Stats -->
+        <div class="stat-row">
+          <div class="stat-tile">
+            <div class="stat-tile-num accent">2,100<span style="font-size:1.25rem">+</span></div>
+            <div class="stat-tile-label">Business owners helped</div>
+          </div>
+          <div class="stat-tile">
+            <div class="stat-tile-num">4.9<span style="font-size:1rem; color: var(--amber)">★</span></div>
+            <div class="stat-tile-label">Average rating</div>
+          </div>
+        </div>
+
+        <!-- Live prompt card -->
+        <div class="prompt-card">
+          <div class="prompt-card-bar">
+            <div class="traffic-lights">
+              <span class="tl-r"></span><span class="tl-y"></span><span class="tl-g"></span>
+            </div>
+            <span class="prompt-card-label">Cold Email Prompt</span>
+          </div>
+          <div class="prompt-card-body">
+            <p class="prompt-text">
+              Write a cold email to <span class="ph">[prospect name]</span><br />
+              at <span class="ph">[company]</span>. Under 120 words.<br />
+              End with a soft question, not a meeting request.
+            </p>
+          </div>
+          <div class="prompt-card-footer">
+            <div class="prompt-meta">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              ChatGPT-4, Claude
+            </div>
+            <div class="prompt-meta">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Sales &amp; Outreach
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial -->
+        <div class="hero-testimonial">
+          <div class="stars">★★★★★</div>
+          <blockquote>
+            "Saved me 6 hours last week alone. The cold email prompt got a
+            reply rate I haven't seen in 3 years of sending."
+          </blockquote>
+          <div class="hero-testimonial-author">
+            <div class="avatar">MK</div>
+            <div>
+              <div class="hero-testimonial-name">Marcus K.</div>
+              <div class="hero-testimonial-role">E-commerce founder, Berlin</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LOGO BAR ───────────────────────────────────────────────────── -->
+  <div class="logo-bar">
+    <div class="logo-bar-inner">
+      <span class="logo-bar-label">Works with</span>
+      <div class="logo-bar-items">
+        <div class="logo-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" opacity="0.5"><circle cx="12" cy="12" r="10"/></svg>
+          ChatGPT-4o
+        </div>
+        <div class="logo-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" opacity="0.5"><polygon points="12 2 22 21 2 21"/></svg>
+          Claude 4
+        </div>
+        <div class="logo-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" opacity="0.5"><rect x="3" y="3" width="18" height="18" rx="3"/></svg>
+          Gemini 2.5
+        </div>
+        <div class="logo-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" opacity="0.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          Any AI tool
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── THREE WAYS — Bento ───────────────────────────────────────── -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-kicker">Get started</span>
+      <h2>Three ways to win<br />with AI this week</h2>
+      <p>Whether you want a personalised plan, free reading, or a ready-made tool — here's where to start.</p>
+    </div>
+
+    <div class="bento">
+
+      <!-- Primary: AI Audit -->
+      <div class="bento-card bento-primary">
+        <div class="bento-icon">🎯</div>
+        <div>
+          <span class="tag" style="margin-bottom:.625rem">Most popular</span>
+          <h3>Free AI Audit</h3>
+        </div>
+        <p>Answer 20 questions. Get a personalised report ranking your biggest AI opportunities by effort and impact. Takes 5 minutes.</p>
+
+        <div class="mini-audit">
+          <div class="mini-audit-row">
+            <span class="mini-audit-label">Customer Service</span>
+            <div class="mini-bar-outer"><div class="mini-bar-inner" style="width:82%"></div></div>
+            <span class="mini-audit-pct accent">82</span>
+          </div>
+          <div class="mini-audit-row">
+            <span class="mini-audit-label">Sales Outreach</span>
+            <div class="mini-bar-outer"><div class="mini-bar-inner mini-bar-amber" style="width:67%"></div></div>
+            <span class="mini-audit-pct amber">67</span>
+          </div>
+          <div class="mini-audit-row">
+            <span class="mini-audit-label">Operations</span>
+            <div class="mini-bar-outer"><div class="mini-bar-inner" style="width:54%"></div></div>
+            <span class="mini-audit-pct accent">54</span>
+          </div>
+        </div>
+
+        <a href="#" class="bento-link">
+          Take the Audit
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+
+      <!-- Guides -->
+      <div class="bento-card">
+        <div class="bento-icon">📚</div>
+        <h3>Practical Guides</h3>
+        <p>Step-by-step walkthroughs for real business tasks — customer service, sales, SOPs, hiring. Free to read.</p>
+        <a href="#" class="bento-link">Browse Guides →</a>
+      </div>
+
+      <!-- Tools -->
+      <div class="bento-card">
+        <div class="bento-icon bento-icon-amber">🛠️</div>
+        <h3>Ready-to-Use Tools</h3>
+        <p>Copy-paste prompts and templates. No setup, no API keys. Use today in ChatGPT or Claude.</p>
+        <a href="#" class="bento-link" style="color:var(--amber)">See Products →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── POPULAR GUIDES ────────────────────────────────────────────── -->
+  <section class="section" style="padding-top:0">
+    <div class="section-header">
+      <span class="section-kicker">Guides</span>
+      <h2>Popular this month</h2>
+      <p>Step-by-step walkthroughs for the business tasks you actually face. Free to read.</p>
+    </div>
+
+    <div class="guides-strip">
+      <a href="#" class="guide-row">
+        <div class="guide-num">01</div>
+        <div>
+          <div class="guide-tag">Customer Service</div>
+          <div class="guide-title">Handle customer complaints with AI — without sounding robotic</div>
+        </div>
+        <div class="guide-arrow">›</div>
+      </a>
+      <a href="#" class="guide-row">
+        <div class="guide-num">02</div>
+        <div>
+          <div class="guide-tag">Sales</div>
+          <div class="guide-title">Cold emails that get replies: 3 AI prompts that sound like you</div>
+        </div>
+        <div class="guide-arrow">›</div>
+      </a>
+      <a href="#" class="guide-row">
+        <div class="guide-num">03</div>
+        <div>
+          <div class="guide-tag">Operations</div>
+          <div class="guide-title">Write SOPs in 10 minutes using ChatGPT: a step-by-step template</div>
+        </div>
+        <div class="guide-arrow">›</div>
+      </a>
+      <a href="#" class="guide-row">
+        <div class="guide-num">04</div>
+        <div>
+          <div class="guide-tag">Hiring</div>
+          <div class="guide-title">Write job descriptions that attract better candidates in half the time</div>
+        </div>
+        <div class="guide-arrow">›</div>
+      </a>
+    </div>
+
+    <div style="margin-top:1.75rem; text-align:center;">
+      <a href="#" class="btn-ghost">See all guides →</a>
+    </div>
+  </section>
+
+  <!-- ── PRODUCT TEASER ────────────────────────────────────────────── -->
+  <div class="product-band">
+    <div class="product-inner">
+
+      <div>
+        <span class="tag tag-amber product-kicker">When you're ready to move faster</span>
+        <h2 class="product-heading">AI Shortcut Stack</h2>
+        <p class="product-desc">
+          80 copy-paste prompts for the business tasks you do every week —
+          sales, hiring, customer service, operations, marketing. Tested on
+          real businesses, not demo projects.
+        </p>
+        <div class="product-price-row">
+          <span class="price-old">$49</span>
+          <span class="price-new">$19</span>
+          <span class="price-note">one-time payment</span>
+        </div>
+        <div style="display:flex; gap:.75rem; flex-wrap:wrap">
+          <a href="#" class="btn-primary" style="background:var(--amber)">See the Product →</a>
+          <a href="#" class="btn-ghost">View sample prompts</a>
+        </div>
+      </div>
+
+      <div class="product-prompts">
+        <div class="mini-prompt">
+          <div class="mini-prompt-cat">Sales &amp; Outreach</div>
+          <div class="mini-prompt-text">Write a cold email to <span class="ph">[name]</span> at <span class="ph">[company]</span>. Under 120 words...</div>
+        </div>
+        <div class="mini-prompt">
+          <div class="mini-prompt-cat">Customer Service</div>
+          <div class="mini-prompt-text">Respond to this complaint: <span class="ph">[paste email]</span>. Empathetic, under 80 words...</div>
+        </div>
+        <div class="mini-prompt">
+          <div class="mini-prompt-cat">Operations</div>
+          <div class="mini-prompt-text">Turn this rough process into a clean SOP: <span class="ph">[describe steps]</span>. Format...</div>
+        </div>
+        <div class="mini-prompt">
+          <div class="mini-prompt-cat">Hiring</div>
+          <div class="mini-prompt-text">Write a job description for <span class="ph">[role]</span> at a <span class="ph">[size]</span> company...</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── TESTIMONIALS ──────────────────────────────────────────────── -->
+  <div class="testimonials-bg">
+    <div class="section">
+      <div class="section-header" style="text-align:center; max-width:560px; margin:0 auto 3rem;">
+        <div style="font-size:1.5rem; letter-spacing:.05em; color:var(--amber); margin-bottom:.5rem;">★★★★★</div>
+        <span class="section-kicker" style="display:block;text-align:center">From founders and operators</span>
+        <h2>What people are saying</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <figure class="tcard">
+          <div class="stars">★★★★★</div>
+          <blockquote>"The cold email prompts alone paid for themselves in the first week. I went from 2% reply rate to nearly 12%."</blockquote>
+          <div class="tcard-author">
+            <div class="avatar">MK</div>
+            <div>
+              <div class="tcard-name">Marcus K.</div>
+              <div class="tcard-role">E-commerce founder, Berlin</div>
+            </div>
+          </div>
+        </figure>
+        <figure class="tcard">
+          <div class="stars">★★★★★</div>
+          <blockquote>"The AI Audit was a wake-up call. I had no idea how much time I was leaving on the table in customer support."</blockquote>
+          <div class="tcard-author">
+            <div class="avatar">SL</div>
+            <div>
+              <div class="tcard-name">Sanna L.</div>
+              <div class="tcard-role">Service business owner, Helsinki</div>
+            </div>
+          </div>
+        </figure>
+        <figure class="tcard">
+          <div class="stars">★★★★★</div>
+          <blockquote>"Finally AI advice written for actual small businesses, not tech companies with 50-person teams."</blockquote>
+          <div class="tcard-author">
+            <div class="avatar">JP</div>
+            <div>
+              <div class="tcard-name">James P.</div>
+              <div class="tcard-role">Restaurant owner, Manchester</div>
+            </div>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOUNDER ───────────────────────────────────────────────────── -->
+  <section class="section">
+    <div class="founder-inner">
+      <div class="founder-avatar">👋</div>
+      <div>
+        <div class="founder-kicker">From the founder</div>
+        <blockquote class="founder-quote">
+          "Most AI advice is written for engineers and enterprise consultants.
+          I built ProfitSlab because small business owners need practical
+          steps — not hype. These are the same workflows, prompts, and
+          checklists I use to run my own business."
+        </blockquote>
+        <p class="founder-attr">— <strong>Tommi</strong>, founder of ProfitSlab · <a href="https://www.evenrue.fi/" style="color:var(--accent);text-decoration:none">Evenrue</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── NEWSLETTER ─────────────────────────────────────────────────── -->
+  <div class="newsletter-bg">
+    <div class="section">
+      <div class="newsletter-inner">
+        <span class="tag" style="margin:0 auto 1.25rem; display:inline-flex">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          No spam · Unsubscribe anytime
+        </span>
+        <h2>One practical AI tip,<br /> every Friday.</h2>
+        <p>The weekly habit that keeps your business ahead. One email, one actionable tip, five minutes to read.</p>
+        <div class="nl-form">
+          <input type="email" class="nl-input" placeholder="your@email.com" />
+          <button class="btn-primary">Subscribe →</button>
+        </div>
+        <p class="nl-footnote">
+          Rather start with a full picture? <a href="#">Take the free 5-min AI Audit →</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="#" class="footer-logo">
+        <div class="footer-logo-icon">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" color="var(--accent)">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+            <polyline points="2 17 12 22 22 17"/>
+            <polyline points="2 12 12 17 22 12"/>
+          </svg>
+        </div>
+        ProfitSlab
+      </a>
+      <div class="footer-links">
+        <a href="#">Guides</a>
+        <a href="#">Products</a>
+        <a href="#">AI Audit</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <span>© 2026 ProfitSlab. All rights reserved.</span>
+      <span>Powered by <a href="https://www.evenrue.fi/" target="_blank">Evenrue</a></span>
+    </div>
+  </footer>
+
+  <!-- ── MOCKUP NOTICE ──────────────────────────────────────────────── -->
+  <div class="mockup-banner">
+    ⚠ MOCKUP ONLY — Not live. Design concept for review. No repo changes made.
+  </div>
+
+</body>
+</html>
