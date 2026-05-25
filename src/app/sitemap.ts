@@ -87,6 +87,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://www.profitslab.io/guides/write-sops-with-ai/",
+      lastModified: new Date("2026-05-25"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://www.profitslab.io/guides/ai-tools-vs-virtual-assistant/",
       lastModified: new Date("2026-05-24"),
       changeFrequency: "monthly",
