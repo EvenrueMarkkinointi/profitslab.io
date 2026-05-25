@@ -79,6 +79,13 @@ const upcomingGuides = [
     status: "live",
   },
   {
+    tag: "Marketing",
+    title: "How to Repurpose One Blog Post into 10 Pieces of Content",
+    desc: "Turn one article into a week of content across every platform. Copy-paste prompts included. No extra writing required.",
+    href: "/guides/repurpose-blog-post-into-content",
+    status: "live",
+  },
+  {
     tag: "Tech",
     title: "MCP Server Setup: Connect AI to Your Business Tools",
     desc: "Step-by-step guide to setting up Model Context Protocol servers. Connect ChatGPT to your CRM, database, and APIs.",
@@ -115,7 +122,7 @@ export default function Guides() {
           </div>
 
           <div className="guides-coming-soon-notice">
-            <span className="guides-coming-badge">11 Guides Live</span>
+            <span className="guides-coming-badge">12 Guides Live</span>
             <p>Customer service, sales, marketing, strategy, tech, and comparisons. More coming weekly.</p>
             <Link href="/audit" className="btn-primary" style={{ marginTop: "0.75rem", display: "inline-flex" }}>
               Take the free AI Audit in the meantime →
