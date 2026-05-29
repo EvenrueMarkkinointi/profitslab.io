@@ -50,7 +50,7 @@ export default function SalesFollowUpSequence() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            headline: "How to Build a 5-Email Sales Follow-Up Sequence That Closes",
+            headline: "How to Build a Sales Follow-Up Email Sequence That Closes in 5 Emails",
             description:
               "Build a sales follow up email sequence that converts warm leads into buyers. 5 copy-paste AI prompts with exact timing.",
             author: { "@type": "Organization", name: "ProfitSlab", url: "https://www.profitslab.io" },
@@ -82,7 +82,7 @@ export default function SalesFollowUpSequence() {
               {
                 "@type": "ListItem",
                 position: 3,
-                name: "5-Email Sales Follow-Up Sequence",
+                name: "Sales Follow-Up Email Sequence",
                 item: "https://www.profitslab.io/guides/sales-follow-up-email-sequence/",
               },
             ],
@@ -124,7 +124,7 @@ export default function SalesFollowUpSequence() {
             {/* Hero */}
             <header className="article-hero">
               <span className="article-tag">Sales</span>
-              <h1>How to Build a 5-Email Sales Follow-Up Sequence That Closes</h1>
+              <h1>How to Build a Sales Follow-Up Email Sequence That Closes in 5 Emails</h1>
               <p className="article-lead">
                 80% of deals need 5 or more follow-ups. Most small businesses stop after 1 or 2.
                 This sales follow up email sequence gives you 5 copy-paste AI prompts,
