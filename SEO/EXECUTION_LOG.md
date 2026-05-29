@@ -41,6 +41,7 @@
 | 2026-05-24 | Built ChatGPT vs Jasper comparison | ✅ Live at /guides/chatgpt-vs-jasper-small-business/ |
 | 2026-05-25 | Fixed guides hub badge count | ✅ Updated from 6 → 11 Guides Live |
 | 2026-05-25 | Built Write SOPs guide | ✅ /guides/write-sops-with-ai/ live (~3,200 words) |
+| 2026-05-25 | Built Repurpose Blog Post guide | ✅ /guides/repurpose-blog-post-into-content/ live (~3,400 words) |
 | 2026-05-25 | Updated sitemap | ✅ Added write-sops-with-ai URL |
 
 ---
