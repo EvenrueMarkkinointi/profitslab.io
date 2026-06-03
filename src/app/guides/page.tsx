@@ -100,10 +100,10 @@ const upcomingGuides = [
     status: "live",
   },
   {
-    tag: "Operations",
-    title: "Write SOPs in 10 Minutes Using ChatGPT",
-    desc: "Turn chaotic processes into clear, documented instructions. Copy-paste prompts + reusable template. No writing skills required.",
-    href: "/guides/write-sops-with-ai",
+    tag: "Sales",
+    title: "LinkedIn Outreach with AI: Templates That Don't Feel Spammy",
+    desc: "AI-powered LinkedIn connection request, DM, and follow-up templates. Copy-paste prompts for signal-based personalization.",
+    href: "/guides/linkedin-outreach-templates-ai",
     status: "live",
   },
 ];
@@ -129,7 +129,7 @@ export default function Guides() {
           </div>
 
           <div className="guides-coming-soon-notice">
-            <span className="guides-coming-badge">13 Guides Live</span>
+            <span className="guides-coming-badge">14 Guides Live</span>
             <p>Customer service, sales, marketing, strategy, tech, and comparisons. More coming weekly.</p>
             <Link href="/audit" className="btn-primary" style={{ marginTop: "0.75rem", display: "inline-flex" }}>
               Take the free AI Audit in the meantime →
