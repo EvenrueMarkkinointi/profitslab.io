@@ -761,6 +761,10 @@ Keep each bullet to one sentence.&quot;`}
               </p>
               <ul>
                 <li>
+                  <Link href="/guides/cold-email-prompts">Cold Email Prompts That Get 40%+ Open Rates</Link> —
+                  Copy-paste AI prompts for subject lines, body copy, follow-ups, and A/B testing. Signal-based personalization framework included.
+                </li>
+                <li>
                   <Link href="/guides/ai-prompts-for-sales">AI Prompts for Sales</Link> —
                   Cold outreach, proposals, and objection handling across the full sales cycle.
                 </li>
