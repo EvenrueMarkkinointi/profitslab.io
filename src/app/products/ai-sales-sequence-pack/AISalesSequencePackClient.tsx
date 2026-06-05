@@ -58,7 +58,7 @@ const contents = [
   },
 ];
 
-export default function AISalesSequencePack() {
+export default function AISalesSequencePackClient() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [showStickyBar, setShowStickyBar] = useState(true);
   const pricingRef = useRef<HTMLElement>(null);

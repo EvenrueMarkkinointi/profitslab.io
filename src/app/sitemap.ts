@@ -105,6 +105,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://www.profitslab.io/guides/cold-email-prompts/",
+      lastModified: new Date("2026-06-05"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://www.profitslab.io/guides/repurpose-blog-post-into-content/",
       lastModified: new Date("2026-05-25"),
       changeFrequency: "monthly",
