@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: "How do I prevent AI from hallucinating owners or deadlines?",
-    a: "Use the safety checklist at the end of this guide. The three rules are: (1) always add \u0022if no owner is stated, mark as TBD and suggest the most likely person\u0022 to your prompt, (2) never let AI invent deadlines — require \u0022TBD\u0022 if none was mentioned, and (3) scan the output for action items that sound plausible but were never actually discussed. The 30-second review at the end catches 90% of hallucinations.",
+    a: "Use the safety checklist at the end of this guide. The three rules are: (1) always add &quot;if no owner is stated, mark as TBD and suggest the most likely person&quot; to your prompt, (2) never let AI invent deadlines — require &quot;TBD&quot; if none was mentioned, and (3) scan the output for action items that sound plausible but were never actually discussed. The 30-second review at the end catches 90% of hallucinations.",
   },
   {
     q: "Can this workflow handle client meetings, not just internal team meetings?",
@@ -44,7 +44,7 @@ const faqs = [
   },
   {
     q: "How do I turn this into a habit my team actually follows?",
-    a: "Save the prompts as shortcuts in your AI tool (ChatGPT custom instructions, Claude projects, or Notion AI snippets). Then document a 5-minute SOP: \u0022After every meeting, paste notes into AI, run the action items prompt, confirm owners, send the follow-up email.\u0022 Assign one person per meeting to own the post-meeting workflow. For recurring meetings, the same person handles it every time so the habit sticks. Link this SOP in your meeting calendar invites so it is visible.",
+    a: "Save the prompts as shortcuts in your AI tool (ChatGPT custom instructions, Claude projects, or Notion AI snippets). Then document a 5-minute SOP: &quot;After every meeting, paste notes into AI, run the action items prompt, confirm owners, send the follow-up email.&quot; Assign one person per meeting to own the post-meeting workflow. For recurring meetings, the same person handles it every time so the habit sticks. Link this SOP in your meeting calendar invites so it is visible.",
   },
 ];
 
@@ -145,7 +145,7 @@ export default function MeetingNotesToActionItems() {
         <article className="article-body">
           <h2>Why most meeting notes never become action items</h2>
           <p>
-            The meeting ends. Everyone nods. Someone says, \u0022I will send a summary.\u0022 Then nothing happens. Three days later, nobody remembers who was supposed to do what. The deadline passes. The client follows up. You scramble to reconstruct what was decided.
+            The meeting ends. Everyone nods. Someone says, &quot;I will send a summary.&quot; Then nothing happens. Three days later, nobody remembers who was supposed to do what. The deadline passes. The client follows up. You scramble to reconstruct what was decided.
           </p>
           <p>
             This is not a discipline problem. It is a <strong>translation problem</strong>. Raw meeting notes — whether typed bullets, a Zoom transcript, or a voice memo — are not tasks. They are a record of conversation. Turning them into action items requires three decisions: what needs to be done, who owns it, and when is it due. Most people skip this step because it takes time and mental effort.
@@ -220,7 +220,7 @@ export default function MeetingNotesToActionItems() {
               <li>Only extract items that require someone to do something. Do not include discussion, context, or decisions with no next step.</li>
               <li>Every action item must include: a clear task description, a named owner (if stated in the notes), and a due date (if stated). If no owner is named, mark as TBD and suggest the most likely person based on context.</li>
               <li>If no deadline is mentioned, mark as TBD. Do not invent dates.</li>
-              <li>Add a one-sentence \u0022definition of done\u0022 for each item — what does completion look like?</li>
+              <li>Add a one-sentence &quot;definition of done&quot; for each item — what does completion look like?</li>
               <li>Flag any action item that is vague or unclear with [NEEDS CLARIFICATION].</li>
               <li>Sort by priority: urgent/deadline-driven first, then everything else.</li>
             </ol>
@@ -239,7 +239,7 @@ export default function MeetingNotesToActionItems() {
           </div>
 
           <p>
-            <strong>What to expect:</strong> AI will return 3-8 action items depending on the meeting length. Some will have owners and dates. Others will be TBD. The definition-of-done line is the most valuable part — it turns vague tasks into specific deliverables. For example, \u0022look into pricing\u0022 becomes \u0022send vendor pricing comparison to team by Friday — done when comparison doc is shared in Slack.\u0022
+            <strong>What to expect:</strong> AI will return 3-8 action items depending on the meeting length. Some will have owners and dates. Others will be TBD. The definition-of-done line is the most valuable part — it turns vague tasks into specific deliverables. For example, &quot;look into pricing&quot; becomes &quot;send vendor pricing comparison to team by Friday — done when comparison doc is shared in Slack.&quot;
           </p>
 
           <h2>Prompt 2 — Write the follow-up email in 30 seconds</h2>
@@ -259,7 +259,7 @@ export default function MeetingNotesToActionItems() {
               <li>6-10 sentences max</li>
               <li>Subject line: clear and specific, under 60 characters</li>
               <li>Bullet the action items with Owner + Due date</li>
-              <li>Include one line of \u0022open questions\u0022 or items that need clarification</li>
+              <li>Include one line of &quot;open questions&quot; or items that need clarification</li>
               <li>Tone: neutral, professional, not overly formal</li>
               <li>End with a clear next step or check-in date</li>
             </ul>
@@ -279,12 +279,12 @@ export default function MeetingNotesToActionItems() {
 
           <h3>Internal vs. client-facing versions</h3>
           <p>
-            For internal team emails, keep the tone direct and candid. Flag blockers, mention dependencies, and assign accountability without softening language. For client-facing emails, add a thank-you line, keep the \u0022open questions\u0022 section polished, and frame action items as collaboration rather than assignments. Change the meeting context line in the prompt and the tone shifts automatically.
+            For internal team emails, keep the tone direct and candid. Flag blockers, mention dependencies, and assign accountability without softening language. For client-facing emails, add a thank-you line, keep the &quot;open questions&quot; section polished, and frame action items as collaboration rather than assignments. Change the meeting context line in the prompt and the tone shifts automatically.
           </p>
 
           <h2>Prompt 3 — Clean up messy or vague notes</h2>
           <p>
-            Sometimes your notes are a disaster. Half-sentences. Thoughts that trail off. Vague commitments like \u0022we should look into that\u0022 with no owner. This prompt is a pre-processor. Run it before Prompt 1 when your notes are unstructured, and you will get dramatically better output.
+            Sometimes your notes are a disaster. Half-sentences. Thoughts that trail off. Vague commitments like &quot;we should look into that&quot; with no owner. This prompt is a pre-processor. Run it before Prompt 1 when your notes are unstructured, and you will get dramatically better output.
           </p>
 
           <div className="prompt-block">
@@ -297,9 +297,9 @@ export default function MeetingNotesToActionItems() {
             </p>
             <ol>
               <li>Remove all discussion, backstory, and debate. Keep only what was decided.</li>
-              <li>Convert vague commitments into specific tasks. For example, \u0022we should review the budget\u0022 becomes \u0022Review Q3 budget and flag variances over 10%.\u0022</li>
+              <li>Convert vague commitments into specific tasks. For example, &quot;we should review the budget&quot; becomes &quot;Review Q3 budget and flag variances over 10%.&quot;</li>
               <li>Guess the owner for each task based on who was speaking or their role. Mark uncertain owners with [?].</li>
-              <li>Preserve any deadlines mentioned, even if informal (\u0022by next Friday\u0022 = specific date).</li>
+              <li>Preserve any deadlines mentioned, even if informal (&quot;by next Friday&quot; = specific date).</li>
               <li>Output a clean, structured summary: Decisions, Action Items, Open Questions.</li>
             </ol>
             <p>
@@ -316,7 +316,7 @@ export default function MeetingNotesToActionItems() {
 
           <h2>Prompt 4 — Assign owners when nobody was named</h2>
           <p>
-            In many meetings, especially fast-moving ones, nobody explicitly says \u0022Alex will handle this.\u0022 The task is discussed, everyone assumes someone else is doing it, and it dies. This prompt uses context and role inference to suggest owners for unassigned tasks. You still confirm them, but AI does the hard work of matching tasks to people.
+            In many meetings, especially fast-moving ones, nobody explicitly says &quot;Alex will handle this.&quot; The task is discussed, everyone assumes someone else is doing it, and it dies. This prompt uses context and role inference to suggest owners for unassigned tasks. You still confirm them, but AI does the hard work of matching tasks to people.
           </p>
 
           <div className="prompt-block">
@@ -328,7 +328,7 @@ export default function MeetingNotesToActionItems() {
               <strong>Team context:</strong>
             </p>
             <p>
-              [List each team member and their role: e.g., \u0022Sarah — Marketing Manager, handles campaigns and content.\u0022 \u0022Jake — Lead Developer, owns technical decisions and architecture.\u0022]
+              [List each team member and their role: e.g., &quot;Sarah — Marketing Manager, handles campaigns and content.&quot; &quot;Jake — Lead Developer, owns technical decisions and architecture.&quot;]
             </p>
             <p>
               <strong>Action items needing owners:</strong>
@@ -348,7 +348,7 @@ export default function MeetingNotesToActionItems() {
           </div>
 
           <p>
-            <strong>Always confirm inferred owners.</strong> AI suggestions are educated guesses, not assignments. Send a quick message: \u0022AI suggested you own the Q3 budget review based on your role — does that work?\u0022 This takes 10 seconds and prevents the wrong person from being surprised by a deadline.
+            <strong>Always confirm inferred owners.</strong> AI suggestions are educated guesses, not assignments. Send a quick message: &quot;AI suggested you own the Q3 budget review based on your role — does that work?&quot; This takes 10 seconds and prevents the wrong person from being surprised by a deadline.
           </p>
 
           <h2>Prompt 5 — Export to your project management tool</h2>
@@ -373,7 +373,7 @@ export default function MeetingNotesToActionItems() {
             <ul>
               <li>Columns: Task Name, Owner, Due Date, Priority (High/Medium/Low), Status (Not started), Definition of Done</li>
               <li>Format as a markdown table for easy copy-paste into any tool</li>
-              <li>Include a \u0022Source: [Meeting Name] — [Date]\u0022 column so tasks are traceable</li>
+              <li>Include a &quot;Source: [Meeting Name] — [Date]&quot; column so tasks are traceable</li>
               <li>Sort by Due Date, then Priority</li>
             </ul>
           </div>
@@ -421,8 +421,8 @@ export default function MeetingNotesToActionItems() {
               </tr>
               <tr>
                 <td><strong>4. Vague definitions of done</strong></td>
-                <td>\u0022Complete the review\u0022 is not a definition of done</td>
-                <td>Rewrite to a specific deliverable: \u0022Send reviewed doc with comments to team\u0022</td>
+                <td>&quot;Complete the review&quot; is not a definition of done</td>
+                <td>Rewrite to a specific deliverable: &quot;Send reviewed doc with comments to team&quot;</td>
               </tr>
               <tr>
                 <td><strong>5. Merged tasks</strong></td>
@@ -477,7 +477,7 @@ export default function MeetingNotesToActionItems() {
           </p>
 
           <p>
-            <strong>Total time: 1 minute 45 seconds.</strong> The client had a clear list of next steps before they were back at their desk. Compare this to the typical post-meeting drift: no summary, no action items, and a follow-up call where everyone asks \u0022what did we decide again?\u0022
+            <strong>Total time: 1 minute 45 seconds.</strong> The client had a clear list of next steps before they were back at their desk. Compare this to the typical post-meeting drift: no summary, no action items, and a follow-up call where everyone asks &quot;what did we decide again?&quot;
           </p>
 
           <h2>How to turn this into a team habit</h2>
@@ -492,12 +492,12 @@ export default function MeetingNotesToActionItems() {
 
           <h3>Document a 5-minute SOP</h3>
           <p>
-            Write it down. <Link href="/guides/write-sops-with-ai/">Use the SOP guide here</Link> to create a one-page process: \u0022After every meeting, paste notes into AI, run the action items prompt, confirm owners, send the follow-up email.\u0022 Assign one person per meeting to own this. For recurring meetings, the same person handles it every time. Consistency beats perfection.
+            Write it down. <Link href="/guides/write-sops-with-ai/">Use the SOP guide here</Link> to create a one-page process: &quot;After every meeting, paste notes into AI, run the action items prompt, confirm owners, send the follow-up email.&quot; Assign one person per meeting to own this. For recurring meetings, the same person handles it every time. Consistency beats perfection.
           </p>
 
           <h3>Link it in your calendar invites</h3>
           <p>
-            Add a line to your meeting template: \u0022Action items and follow-up email will be sent within 30 minutes of this meeting.\u0022 This sets expectations before the meeting even starts. Attendees know accountability is built in.
+            Add a line to your meeting template: &quot;Action items and follow-up email will be sent within 30 minutes of this meeting.&quot; This sets expectations before the meeting even starts. Attendees know accountability is built in.
           </p>
 
           <h3>Track outcomes over time</h3>
