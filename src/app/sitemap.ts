@@ -159,6 +159,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://www.profitslab.io/guides/competitor-analysis-chatgpt/",
+      lastModified: new Date("2026-06-19"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://www.profitslab.io/audit",
       lastModified: new Date("2026-05-23"),
       changeFrequency: "monthly",
