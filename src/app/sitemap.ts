@@ -183,6 +183,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: "https://www.profitslab.io/guides/ai-product-descriptions/",
+      lastModified: new Date("2026-06-29"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://www.profitslab.io/privacy",
       lastModified: new Date("2026-01-01"),
       changeFrequency: "yearly",

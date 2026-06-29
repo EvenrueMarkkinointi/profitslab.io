@@ -155,6 +155,13 @@ const upcomingGuides = [
     href: "/guides/quarterly-planning-ai",
     status: "live",
   },
+  {
+    tag: "Marketing",
+    title: "AI Product Descriptions That Sell: Conversion-First Workflow",
+    desc: "Write AI product descriptions that convert. 5 copy-paste prompts, a 15-minute QA checklist, and a 3-layer framework for ecommerce stores.",
+    href: "/guides/ai-product-descriptions",
+    status: "live",
+  },
 ];
 
 export default function Guides() {
@@ -178,7 +185,7 @@ export default function Guides() {
           </div>
 
           <div className="guides-coming-soon-notice">
-            <span className="guides-coming-badge">22 Guides Live</span>
+            <span className="guides-coming-badge">23 Guides Live</span>
             <p>Customer service, sales, marketing, strategy, tech, and comparisons. More coming weekly.</p>
             <Link href="/audit" className="btn-primary" style={{ marginTop: "0.75rem", display: "inline-flex" }}>
               Take the free AI Audit in the meantime →
