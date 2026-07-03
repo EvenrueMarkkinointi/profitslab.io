@@ -201,6 +201,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://www.profitslab.io/guides/ai-tools-for-freelancers/",
+      lastModified: new Date("2026-07-03"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://www.profitslab.io/privacy",
       lastModified: new Date("2026-01-01"),
       changeFrequency: "yearly",
