@@ -23,6 +23,13 @@ const upcomingGuides = [
     status: "live",
   },
   {
+    tag: "Operations",
+    title: "Automate Your Inbox: AI Email Triage for Small Business",
+    desc: "Automate your inbox with AI email triage. Free ChatGPT workflow + paid tool options. 10-minute daily routine, copy-paste prompts, and exact setup steps.",
+    href: "/guides/ai-email-triage",
+    status: "live",
+  },
+  {
     tag: "Marketing",
     title: "AI Content Calendar: Build One in 15 Minutes (Free Template + Prompts)",
     desc: "Build a content calendar in 15 minutes with AI. Free Google Sheets template + 4 copy-paste prompts. No paid tools needed.",
@@ -206,7 +213,7 @@ export default function Guides() {
           </div>
 
           <div className="guides-coming-soon-notice">
-            <span className="guides-coming-badge">26 Guides Live</span>
+            <span className="guides-coming-badge">27 Guides Live</span>
             <p>Customer service, sales, marketing, strategy, tech, and comparisons. More coming weekly.</p>
             <Link href="/audit" className="btn-primary" style={{ marginTop: "0.75rem", display: "inline-flex" }}>
               Take the free AI Audit in the meantime →
