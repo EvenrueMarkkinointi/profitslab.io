@@ -213,6 +213,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://www.profitslab.io/guides/ai-financial-forecasting/",
+      lastModified: new Date("2026-07-06"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://www.profitslab.io/privacy",
       lastModified: new Date("2026-01-01"),
       changeFrequency: "yearly",
