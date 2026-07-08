@@ -197,6 +197,13 @@ const upcomingGuides = [
     href: "/guides/ai-product-descriptions",
     status: "live",
   },
+  {
+    tag: "Strategy",
+    title: "How to Use AI for Market Research (Without Paying for Tools): A 60-Minute Guide",
+    desc: "Do AI market research for free with copy-paste ChatGPT prompts. 4 techniques — customer pain points, competitor positioning, pricing validation, and trend spotting. No paid tools needed.",
+    href: "/guides/ai-market-research",
+    status: "live",
+  },
 ];
 
 export default function Guides() {
@@ -220,7 +227,7 @@ export default function Guides() {
           </div>
 
           <div className="guides-coming-soon-notice">
-            <span className="guides-coming-badge">28 Guides Live</span>
+            <span className="guides-coming-badge">29 Guides Live</span>
             <p>Customer service, sales, marketing, strategy, tech, and comparisons. More coming weekly.</p>
             <Link href="/audit" className="btn-primary" style={{ marginTop: "0.75rem", display: "inline-flex" }}>
               Take the free AI Audit in the meantime →
