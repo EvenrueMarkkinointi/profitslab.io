@@ -16,6 +16,13 @@ export const metadata: Metadata = {
 
 const upcomingGuides = [
   {
+    tag: "Marketing",
+    title: "The Complete Guide to AI Prompts for Marketing: Build a Reusable Library in 60 Minutes",
+    desc: "Stop collecting prompt lists. Build a reusable AI marketing prompt library in 60 minutes. 5 copy-paste prompts, a weekly workflow, and a tracking system. Free guide.",
+    href: "/guides/ai-prompts-for-marketing",
+    status: "live",
+  },
+  {
     tag: "Strategy",
     title: "AI Financial Forecasting for Small Business: What You Can Trust",
     desc: "Use AI for financial forecasting without expensive tools. Free ChatGPT + Excel workflows, 5 copy-paste prompts, and a trust framework that keeps you safe.",
@@ -227,7 +234,7 @@ export default function Guides() {
           </div>
 
           <div className="guides-coming-soon-notice">
-            <span className="guides-coming-badge">29 Guides Live</span>
+            <span className="guides-coming-badge">30 Guides Live</span>
             <p>Customer service, sales, marketing, strategy, tech, and comparisons. More coming weekly.</p>
             <Link href="/audit" className="btn-primary" style={{ marginTop: "0.75rem", display: "inline-flex" }}>
               Take the free AI Audit in the meantime →
