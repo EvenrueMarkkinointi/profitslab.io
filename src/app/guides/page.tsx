@@ -217,6 +217,12 @@ const upcomingGuides = [
     desc: "Do AI market research for free with copy-paste ChatGPT prompts. 4 techniques — customer pain points, competitor positioning, pricing validation, and trend spotting. No paid tools needed.",
     href: "/guides/ai-market-research",
     status: "live",
+  {
+    tag: "Comparison",
+    title: "AI Writer Tools Compared: Jasper, Copy.ai, and Writesonic in 2026",
+    desc: "Honest comparison of Jasper, Copy.ai, and Writesonic for small business. Side-by-side pricing, real use cases, and copy-paste prompts. Includes free alternatives.",
+    href: "/guides/ai-writer-tools-compared",
+    status: "live",
   },
 ];
 
@@ -241,7 +247,7 @@ export default function Guides() {
           </div>
 
           <div className="guides-coming-soon-notice">
-            <span className="guides-coming-badge">31 Guides Live</span>
+            <span className="guides-coming-badge">32 Guides Live</span>
             <p>Customer service, sales, marketing, strategy, tech, and comparisons. More coming weekly.</p>
             <Link href="/audit" className="btn-primary" style={{ marginTop: "0.75rem", display: "inline-flex" }}>
               Take the free AI Audit in the meantime →
