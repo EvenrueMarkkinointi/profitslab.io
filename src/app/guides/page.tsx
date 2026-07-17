@@ -16,6 +16,13 @@ export const metadata: Metadata = {
 
 const upcomingGuides = [
   {
+    tag: "Industry",
+    title: "AI for Consultants: Proposals, Reports & Updates That Win Work",
+    desc: "Turn AI into your consulting partner. Copy-paste prompts for proposals, research, client reports, and weekly updates. Free workflow, no tools required.",
+    href: "/guides/ai-for-consultants",
+    status: "live",
+  },
+  {
     tag: "Comparison",
     title: "Claude vs Gemini for Small Business: Which AI Wins in 2026?",
     desc: "Side-by-side comparison on writing, data analysis, Google Workspace, and pricing. Includes copy-paste prompts for both tools.",
@@ -217,6 +224,7 @@ const upcomingGuides = [
     desc: "Do AI market research for free with copy-paste ChatGPT prompts. 4 techniques — customer pain points, competitor positioning, pricing validation, and trend spotting. No paid tools needed.",
     href: "/guides/ai-market-research",
     status: "live",
+  },
   {
     tag: "Comparison",
     title: "AI Writer Tools Compared: Jasper, Copy.ai, and Writesonic in 2026",
@@ -247,7 +255,7 @@ export default function Guides() {
           </div>
 
           <div className="guides-coming-soon-notice">
-            <span className="guides-coming-badge">32 Guides Live</span>
+            <span className="guides-coming-badge">33 Guides Live</span>
             <p>Customer service, sales, marketing, strategy, tech, and comparisons. More coming weekly.</p>
             <Link href="/audit" className="btn-primary" style={{ marginTop: "0.75rem", display: "inline-flex" }}>
               Take the free AI Audit in the meantime →
