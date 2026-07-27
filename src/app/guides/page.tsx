@@ -17,6 +17,13 @@ export const metadata: Metadata = {
 const upcomingGuides = [
   {
     tag: "Industry",
+    title: "AI for Local Business: Reviews, Replies & Local SEO in 15 Minutes a Day",
+    desc: "Use free AI to reply to reviews, post to Google Business Profile, and improve local SEO in 15 minutes a day. Copy-paste prompts for small business owners.",
+    href: "/guides/ai-for-local-business",
+    status: "live",
+  },
+  {
+    tag: "Industry",
     title: "AI for Real Estate: Listings, Replies, Follow-Ups",
     desc: "Use free AI to write real estate listings, reply to leads in 5 minutes, and build follow-up sequences that convert. Copy-paste prompts for agents.",
     href: "/guides/ai-for-real-estate",
