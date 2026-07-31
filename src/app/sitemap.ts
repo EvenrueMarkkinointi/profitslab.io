@@ -261,6 +261,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://www.profitslab.io/guides/ai-for-restaurants/",
+      lastModified: new Date("2026-07-29"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://www.profitslab.io/guides/ai-for-local-business/",
       lastModified: new Date("2026-07-27"),
       changeFrequency: "monthly",
