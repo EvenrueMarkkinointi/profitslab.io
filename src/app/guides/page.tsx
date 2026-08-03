@@ -16,6 +16,13 @@ export const metadata: Metadata = {
 
 const upcomingGuides = [
   {
+    tag: "Operations",
+    title: "AI for Bookkeeping: Automate Receipts, Invoicing & Month-End Close in 20 Minutes a Week",
+    desc: "Use free AI to automate receipt capture, invoice creation, and month-end close. 5 copy-paste prompts. No bookkeeping experience needed.",
+    href: "/guides/ai-for-bookkeeping",
+    status: "live",
+  },
+  {
     tag: "Industry",
     title: "AI for Restaurants: Automate Menus, Reviews \u0026 Scheduling",
     desc: "Use free AI to write menu descriptions, reply to reviews, schedule staff, and handle customer questions in 30 minutes a day. Copy-paste prompts for restaurant owners.",

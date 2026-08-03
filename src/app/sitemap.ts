@@ -267,6 +267,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://www.profitslab.io/guides/ai-for-bookkeeping/",
+      lastModified: new Date("2026-08-03"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://www.profitslab.io/guides/ai-for-local-business/",
       lastModified: new Date("2026-07-27"),
       changeFrequency: "monthly",
