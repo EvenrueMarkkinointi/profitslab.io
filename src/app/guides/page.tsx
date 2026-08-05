@@ -17,6 +17,13 @@ export const metadata: Metadata = {
 const upcomingGuides = [
   {
     tag: "Operations",
+    title: "AI for Project Management: Automate Planning, Status Reports & Task Breakdowns in 15 Minutes a Day",
+    desc: "Use free AI to break down projects, write status reports, and spot risks before they become deadlines. 5 copy-paste prompts. No PM experience needed.",
+    href: "/guides/ai-for-project-management",
+    status: "live",
+  },
+  {
+    tag: "Operations",
     title: "AI for Bookkeeping: Automate Receipts, Invoicing & Month-End Close in 20 Minutes a Week",
     desc: "Use free AI to automate receipt capture, invoice creation, and month-end close. 5 copy-paste prompts. No bookkeeping experience needed.",
     href: "/guides/ai-for-bookkeeping",
