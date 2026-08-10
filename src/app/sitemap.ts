@@ -45,6 +45,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://www.profitslab.io/guides/ai-customer-retention/",
+      lastModified: new Date("2026-08-10"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://www.profitslab.io/guides/ai-for-project-management/",
       lastModified: new Date("2026-08-05"),
       changeFrequency: "monthly",

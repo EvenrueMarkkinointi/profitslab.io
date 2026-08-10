@@ -288,6 +288,13 @@ const upcomingGuides = [
     href: "/guides/ai-writer-tools-compared",
     status: "live",
   },
+  {
+    tag: "Customer Service",
+    title: "AI for Customer Retention: Win-Back Campaigns, Loyalty Programs & Churn Prevention",
+    desc: "Use AI to stop churn, win back lost customers, and build loyalty programs. Copy-paste prompts + 15-minute weekly workflow. No expensive software needed.",
+    href: "/guides/ai-customer-retention",
+    status: "live",
+  },
 ];
 
 export default function Guides() {
@@ -311,7 +318,7 @@ export default function Guides() {
           </div>
 
           <div className="guides-coming-soon-notice">
-            <span className="guides-coming-badge">38 Guides Live</span>
+            <span className="guides-coming-badge">39 Guides Live</span>
             <p>Customer service, sales, marketing, strategy, tech, and comparisons. More coming weekly.</p>
             <Link href="/audit" className="btn-primary" style={{ marginTop: "0.75rem", display: "inline-flex" }}>
               Take the free AI Audit in the meantime →
