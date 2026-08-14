@@ -80,6 +80,13 @@ const upcomingGuides = [
   },
   {
     tag: "Industry",
+    title: "AI for Coaches: Session Notes, Programs & Client Check-Ins",
+    desc: "Use free AI to automate coaching intake, session notes, program design, and client check-ins. 5 copy-paste prompts for solo coaches. No paid tools required.",
+    href: "/guides/ai-for-coaches",
+    status: "live",
+  },
+  {
+    tag: "Industry",
     title: "AI for E-commerce: Automate Returns, Tracking \u0026 FAQs Without Expensive Tools",
     desc: "Use free AI to handle returns, order tracking, and FAQs for your online store. Copy-paste prompts for e-commerce sellers. Save 8+ hours/week.",
     href: "/guides/ai-for-ecommerce",
@@ -325,7 +332,7 @@ export default function Guides() {
           </div>
 
           <div className="guides-coming-soon-notice">
-            <span className="guides-coming-badge">40 Guides Live</span>
+            <span className="guides-coming-badge">41 Guides Live</span>
             <p>Customer service, sales, marketing, strategy, tech, and comparisons. More coming weekly.</p>
             <Link href="/audit" className="btn-primary" style={{ marginTop: "0.75rem", display: "inline-flex" }}>
               Take the free AI Audit in the meantime →

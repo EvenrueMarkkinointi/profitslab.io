@@ -51,6 +51,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://www.profitslab.io/guides/ai-for-coaches/",
+      lastModified: new Date("2026-08-14"),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: "https://www.profitslab.io/guides/ai-for-law-firms/",
       lastModified: new Date("2026-08-12"),
       changeFrequency: "monthly",
