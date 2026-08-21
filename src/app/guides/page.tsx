@@ -316,6 +316,13 @@ const upcomingGuides = [
     href: "/guides/ai-customer-retention",
     status: "live",
   },
+  {
+    tag: "Industry",
+    title: "AI for Dentists: Automate Patient Communication Without New Software",
+    desc: "Learn how dentists use AI to handle appointment reminders, treatment explanations, and review replies—without buying expensive dental software. 5 copy-paste prompts included.",
+    href: "/guides/ai-for-dentists",
+    status: "live",
+  },
 ];
 
 export default function Guides() {
@@ -339,7 +346,7 @@ export default function Guides() {
           </div>
 
           <div className="guides-coming-soon-notice">
-            <span className="guides-coming-badge">42 Guides Live</span>
+            <span className="guides-coming-badge">43 Guides Live</span>
             <p>Customer service, sales, marketing, strategy, tech, and comparisons. More coming weekly.</p>
             <Link href="/audit" className="btn-primary" style={{ marginTop: "0.75rem", display: "inline-flex" }}>
               Take the free AI Audit in the meantime →
